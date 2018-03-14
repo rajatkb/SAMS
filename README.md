@@ -4,6 +4,7 @@ SAMS: Stock analysis and management system
 SE inventory project
 Features:
 •	Login Page
+
   •	  Login using UserId and Password.
 
 •	Users Page(Dashboard)
