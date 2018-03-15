@@ -33,16 +33,5 @@ SAMS: Stock analysis and management system
   *	View, Update, and remove attributes information  
   *	Search  
   
-•	<b>Manage Products<b>  
-  *	Add new product information into a tabular view  
-  *	View, Update, and remove products information  
-  *	Search  
-  
-•	<b>Manage Orders</b>  
-  *	Add new order information into a tabular view  
-  *	View, Update, and remove orders information  
-  *	Search  
-  
-•	<b>Reports</b>  
-  *	View total amount of sales represented on the graphical chart based on yearly,monthly,daily basis(user’s choice) or on basis of dates.(“from date” and “to date” feature).  
+ 
   
