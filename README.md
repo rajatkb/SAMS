@@ -8,7 +8,7 @@ SAMS: Stock analysis and management system
   * Login using UserId and Password.  
   
 •	<b>Users Page(Dashboard)</b>  
-  * Add new user detail into a tabular view  
+   
   * View, Update, and remove user information  
   * Search  
   * Accounts information like: Stocks left, Payment due(from which brands or to which brands), return stock, contacts of different persons of various brands, Total revenue, total no. of  product.  
