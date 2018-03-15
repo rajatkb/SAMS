@@ -28,11 +28,6 @@ SAMS: Stock analysis and management system
   *	View, Update, and remove stores information  
   *	Search  
   
-•	<b>Manage Attributes</b>  
-  *	Add new attribute information into a tabular view  
-  *	View, Update, and remove attributes information  
-  *	Search  
-  
 •	<b>Manage Products<b>  
   * Add new product information in tabular view  
   * View, Update, and remove products information 
