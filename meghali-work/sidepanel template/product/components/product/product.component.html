@@ -1,0 +1,146 @@
+<div class="this_page">
+  <div class="page_name">PRODUCT PAGE</div>
+  <div class="info_bar">
+      <div class="product_container container">
+          <div class="row product_container_row">
+              <div class="col-sm-8">
+                    <div  class="add_new_product_form_container" > 
+                            <div class="add_new_product_form_div">
+                                <form class="add_new_product_form">
+                                  <div class="form_title">ADD NEW PRODUCT <div class="add_btn pull-right" (click)="addFieldValue()">ADD</div></div>
+                                  <div class="form-body">
+                                    
+                                        <div class="container container_rows form-control">
+                                            <div class="row">
+                                                    <div class="col-sm-3" > <input [(ngModel)]="id" name="id" type="text" placeholder="Product ID*"></div>
+                                                        
+                                                    <div class="col-sm-3"> <input type="text" [(ngModel)]="name" name="name" placeholder="Product Name*"></div>                   
+                                                    
+                                                    <div class="col-sm-3"> <input type="text" [(ngModel)]="brand_id" name="brand" placeholder="Brand*"></div>
+                                                    <div class="col-sm-3"> <input  ngDefaultControl type="text" name="category" [(ngModel)]="category_id" placeholder="Category*"></div>
+                                            </div>
+                                        </div>
+                                        <div class="container container_rows">
+                                                <div class="row">
+                                                        <div class="col-sm-2"><input type="text" [(ngModel)]="price" name="price" placeholder="Price*"></div>
+                                                        <div class="col-sm-10"><input type="text" [(ngModel)]="description" name="desc" placeholder="Description*"> </div> 
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                      
+                                  </div>
+                                  
+                                  
+                                </form>
+                              </div>
+                        
+                          </div>
+              </div>
+              <div class="col-sm-4 total_product_container_ka_container container">
+                  
+                  <div class="col-sm-1"></div>
+                  <div class="col-sm-10 total_product_container container">
+                      <div class="row">
+                          <div class="col-sm-8 total_product_no">
+                            {{ getSum() }}
+
+                          </div>
+                          <div class="col-sm-2 total_product_icon"><i class="fa fa-shopping-cart cart_icon" aria-hidden="true"></i></div>   
+                      </div>
+                  
+              </div>
+                  
+                  
+              </div>
+              
+              
+
+          </div>
+
+        </div>   
+  </div>
+  <!--<div class="add_new_product_button_container">
+    <div  (click)="addNewProductFormShow = !addNewProductFormShow" class="add_new_product_button"><i [class.active]="isBtnActive" (click)="toggleClass()"class="fa fa-plus-circle" aria-hidden="true"></i></div>
+  </div>  [hidden]="!addNewProductFormShow" -->
+  
+    
+  
+
+  <!--<div class="print_btn_container"><div class="print">PRINT <i class="fa fa-print" aria-hidden="true"></i></div></div><br>-->
+  <div class="table-users">
+       <div class="header">PRODUCTS</div>
+
+       <table class="product_table" cellspacing="0">
+          <tr>
+             <th>PICTURE</th>
+             <th>PRODUCT ID</th>
+             <th>NAME</th>
+             <th>BRAND</th>
+             <th>CATEGORY</th>
+             <th>PRICE</th>
+             <th width="200" height="20">DESCRIPTION</th>             
+             <th width="150">WAREHOUSE COUNT </th>
+             <th width="150">SHELF COUNT</th>
+             <th>SOLD</th>
+             <th></th>
+            
+          </tr>
+          
+          <tr *ngFor="let item of products; let i = index">
+             <td><img src="obama.jpg" alt="" /></td>
+             <td>{{ item.id }}</td>
+             <td>{{ item.name }}</td>
+             <td>{{ item.brand_id }}</td>
+             <td>{{ item.category_id }}</td>
+             <td>{{ item.price }}</td>
+             <td>Lorem ipsum dolor </td>
+             <td>200</td>
+             <td>200</td>
+             <td>200</td>
+              <td><i class="fa fa-university delete_icon" (click)="deleteFieldValue(i);"aria-hidden="true"></i></td>
+          </tr>
+         
+
+          
+       </table>
+    </div>
+  <div class="table-delete">
+       <div class="header2">DELETED PRODUCTS</div>
+
+       <table class="delete_table" cellspacing="0">
+          <tr>
+             <th>PICTURE</th>
+             <th>PRODUCT ID</th>
+             <th>NAME</th>
+             <th>BRAND</th>
+             <th>CTEGORY</th>
+             <th>PRICE</th>
+             <th width="230">DESCRIPTION</th>
+             <th width="150">WAREHOUSE COUNT</th>
+             <th width="150">SHELF COUNT</th>
+             <th>SOLD</th>
+            <th></th>
+          </tr>
+
+          
+          <tr *ngFor="let item of deletedArray; let i = index">
+            <td><img src="obama.jpg" alt="" /></td>
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.brand_id }}</td>
+            <td>{{ item.category_id }}</td>
+            <td>{{ item.price }}</td>
+            <td>{{item.description}}</td>
+            <td>200</td>
+            <td>200</td>
+            <td>200</td>
+             <td><i class="fa fa-plus-circle insert_icon" (click)="insert_into_product(i)" aria-hidden="true"></i></td>
+         </tr>
+         
+           
+       </table>
+    </div>
+  
+</div>
+

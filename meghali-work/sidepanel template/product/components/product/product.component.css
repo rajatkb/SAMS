@@ -1,0 +1,352 @@
+body{
+    font-family: Quicksand;
+    
+}
+.col-sm-8{
+  padding: 0px;
+}
+.this_page{
+    padding: 0px;
+}
+.page_name{
+    font-size: 30px;
+    color: #76FF03;
+}
+
+.row{
+    margin: 0px;
+}
+.container{
+    padding: 0px;
+}
+.product_container_page{
+    width: 100%;
+    padding: 0px;
+    
+}
+.product_container{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+.product_container_row{
+    width: 100%;
+    position: relative;
+    padding: 5px;
+}
+.total_product_container{
+    height: 70px;
+    background: url("../../graph.jpg");
+    margin-top: 20px;
+    text-align: center;
+    font-size: 30px;
+    color: black;
+    
+    box-shadow: 0px 1px 0px 1px #BDBDBD;
+    
+    
+}
+
+.print_btn_container{
+    height: 35px;
+    width: 80px;
+    background-color: #7E57C2;
+    padding: 10px;
+    border-radius: 15px;
+    margin-top: 10px;
+    position:relative;
+    float: right;
+    color: white;
+    box-shadow: 0px 2px 0px 1px #BDBDBD;
+}
+
+
+.header {
+  background-color: #212121;
+  color: white;
+  font-size: 1.5em;
+  padding: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+.header2 {
+  background-color: #263238;
+  color: white;
+  font-size: 1.5em;
+  padding: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+img {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+}
+
+.table-users {
+  border: 1px solid #E0E0E0;
+  border-radius: 10px;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+  width: 99%;
+  margin: 0 auto;
+  overflow: scroll;
+    height: 400px;
+  
+}
+.table-delete {
+  border: 1px solid #E0E0E0;
+  border-radius: 10px;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+  width: 99%;
+  margin: 30px auto;
+  overflow: scroll;
+    height: 200px;
+  
+}
+
+table {
+  width: 100%;
+}
+tr{
+    width: 100%;
+}
+table td, table th {
+  color: #2b686e;
+  padding: 10px;
+  
+}
+table td {
+  
+  vertical-align: middle;
+}
+
+table th {
+  background-color: #E0E0E0;
+  font-weight: 700;
+}
+table tr:nth-child(2n) {
+  background-color: white;
+}
+table tr:nth-child(2n+1) {
+  background-color: #E0E0E0;
+}
+
+@media screen and (max-width: 700px) {
+  table, tr, td {
+    display: block;
+  }
+
+  td:first-child {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    width: 100px;
+  }
+  td:not(:first-child) {
+    clear: both;
+    margin-left: 100px;
+    padding: 4px 20px 4px 90px;
+    position: relative;
+    text-align: left;
+  }
+  td:not(:first-child):before {
+    color: #91ced4;
+    content: '';
+    display: block;
+    left: 0;
+    position: absolute;
+  }
+  td:nth-child(2):before {
+    content: 'Name:';
+  }
+  td:nth-child(3):before {
+    content: 'Email:';
+  }
+  td:nth-child(4):before {
+    content: 'Phone:';
+  }
+  td:nth-child(5):before {
+    content: 'Comments:';
+  }
+
+  tr {
+    padding: 10px 0;
+    position: relative;
+  }
+  tr:first-child {
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  .header {
+    background-color: transparent;
+    color: white;
+    font-size: 2em;
+    font-weight: 700;
+    padding: 0;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  img {
+    border: 3px solid;
+    border-color: #daeff1;
+    height: 100px;
+    margin: 0.5rem 0;
+    width: 100px;
+  }
+
+  td:first-child {
+    background-color: #c8e7ea;
+    border-bottom: 1px solid #91ced4;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    top: 0;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    width: 100%;
+  }
+  td:not(:first-child) {
+    margin: 0;
+    padding: 5px 1em;
+    width: 100%;
+  }
+  td:not(:first-child):before {
+    font-size: .8em;
+    padding-top: 0.3em;
+    position: relative;
+  }
+  
+
+  tr {
+    background-color: white !important;
+    border: 1px solid #6cbec6;
+    border-radius: 10px;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+    margin: 0.5rem 0;
+    padding: 0;
+  }
+
+  .table-users {
+    border: none;
+    box-shadow: none;
+    overflow: visible;
+  }
+}
+
+.delete_icon{
+    text-align: center;
+    color: red;
+    font-size: 20px;
+    cursor: pointer;
+}
+.insert_icon{
+    text-align: center;
+    color: forestgreen;
+    font-size: 20px;
+    cursor: pointer;
+}
+.add_new_product_button_container{
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    color: #76FF03;
+    font-size: 50px;
+    padding-right: 10px;
+    border-radius: 5px;
+}
+.add_new_product_button{
+  float: right;
+  cursor: pointer;
+}
+ 
+ .form_header{
+   padding: 2px;
+   background-color: black;
+   color: white;
+ }
+ .add_new_product_form {
+  
+  height: 30%;
+  
+  background: white;
+  /* box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15); */
+  
+}
+.add_new_product_form .form_title {
+  width: 100%;
+  
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  font-size: 15px;
+
+  background: #232524;
+  
+  color: white;
+}
+.add_new_product_form .form-body {
+  padding: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+  
+}
+.rows {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+input[type="text"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 100%;
+  margin: 0 auto;
+  height: 35px;
+  padding: 5px 15px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background: #e8ebed;
+  color: #576366;
+  font-size: 14px;
+}
+.add_new_product_form .rule {
+  height: 2px;
+  background: #e8ebed;
+  margin: 0px 35px;
+}
+.add_new_product_form_container{
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.form-control{
+  border: none;
+}
+
+.add_btn {
+  display: inline-block;
+  height: 25px;
+  line-height: 13px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 15px;
+  background: #06e764;
+  
+  cursor: pointer; 
+  color: white;
+  
+}
+.add_new_product_form .form-footer span {
+  margin-right: 8px;
+}
+.container_rows{
+  margin-bottom: 10px;
+}
+.active{
+  background-color: #212121;
+}
+
+
+
+
