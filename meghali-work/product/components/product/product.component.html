@@ -16,8 +16,8 @@
                                                         
                                                     <div class="col-sm-3"> <input type="text" [(ngModel)]="name" name="name" placeholder="Product Name*"></div>                   
                                                     
-                                                    <div class="col-sm-3"> <input type="text" [(ngModel)]="brand_id" name="brand" placeholder="Brand*"></div>
-                                                    <div class="col-sm-3"> <input  ngDefaultControl type="text" name="category" [(ngModel)]="category_id" placeholder="Category*"></div>
+                                                    <div class="col-sm-3"> <input type="text" [(ngModel)]="brand_name" name="brand" placeholder="Brand*"></div>
+                                                    <div class="col-sm-3"> <input  ngDefaultControl type="text" name="category" [(ngModel)]="category_name" placeholder="Category*"></div>
                                             </div>
                                         </div>
                                         <div class="container container_rows">
@@ -87,17 +87,17 @@
             
           </tr>
           
-          <tr *ngFor="let item of products; let i = index">
+          <tr *ngFor="let item of products; let w_item of warehouse; let s_item of outlet; let i = index">
              <td><img src="obama.jpg" alt="" /></td>
              <td>{{ item.id }}</td>
              <td>{{ item.name }}</td>
-             <td>{{ item.brand_id }}</td>
-             <td>{{ item.category_id }}</td>
+             <td>{{ item.brand_name }}</td>
+             <td>{{ item.category_name }}</td>
              <td>{{ item.price }}</td>
-             <td>Lorem ipsum dolor </td>
-             <td>200</td>
-             <td>200</td>
-             <td>200</td>
+             <td>{{item.description}} </td>
+             <td>{{w_item.warehouse_count}}</td>
+             <td>{{s_item.shelf_count}}</td>
+             <td>{{s_item.sold_count}}</td>
               <td><i class="fa fa-university delete_icon" (click)="deleteFieldValue(i);"aria-hidden="true"></i></td>
           </tr>
          
