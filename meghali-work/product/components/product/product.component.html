@@ -43,7 +43,7 @@
                   <div class="col-sm-10 total_product_container container">
                       <div class="row">
                           <div class="col-sm-8 total_product_no">
-                            {{ getSum() }}
+                            {{ getSum() }} <div class="card_name">PRODUCTS</div>
 
                           </div>
                           <div class="col-sm-2 total_product_icon"><i class="fa fa-shopping-cart cart_icon" aria-hidden="true"></i></div>   
@@ -94,10 +94,10 @@
              <td>{{ item.brand_name }}</td>
              <td>{{ item.category_name }}</td>
              <td>{{ item.price }}</td>
-             <td>{{item.description}} </td>
-             <td>{{w_item.warehouse_count}}</td>
-             <td>{{s_item.shelf_count}}</td>
-             <td>{{s_item.sold_count}}</td>
+             <td>{{ item.description }} </td>
+             <td>{{ w_item.warehouse_count }}</td>
+             <td>{{ s_item.shelf_count }}</td>
+             <td>{{ s_item.sold_count }}</td>
               <td><i class="fa fa-university delete_icon" (click)="deleteFieldValue(i);"aria-hidden="true"></i></td>
           </tr>
          
@@ -124,7 +124,7 @@
           </tr>
 
           
-          <tr *ngFor="let item of deletedArray; let i = index">
+          <tr *ngFor="let item of deletedArray_kaArray; let i = index">
             <td><img src="obama.jpg" alt="" /></td>
             <td>{{ item.id }}</td>
             <td>{{ item.name }}</td>
