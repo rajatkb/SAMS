@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand|Poiret+One');
+
+* {
+  font-family: 'Quicksand';
+}
+
+.product-data-row {
+	margin: 4px 2px;
+}
+h5 {
+	border-radius: 4px;
+	margin: 0 5px;
+	padding: 5px;
+	padding-left: 25px;
+}
+
+.container-fluid {
+	padding: 15px 10px;
+}
+
+.col-md-9 {
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	padding: 20px 15px;
+}
+
+#product-img {
+	height: 400px;
+	widows: 300px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
