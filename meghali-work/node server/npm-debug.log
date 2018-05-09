@@ -1,0 +1,342 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install' ]
+2 info using npm@3.10.3
+3 info using node@v9.4.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly install normalizeTree
+8 silly loadCurrentTree Finishing
+9 silly loadIdealTree Starting
+10 silly install loadIdealTree
+11 silly cloneCurrentTree Starting
+12 silly install cloneCurrentTreeToIdealTree
+13 silly cloneCurrentTree Finishing
+14 silly loadShrinkwrap Starting
+15 silly install loadShrinkwrap
+16 silly loadShrinkwrap Finishing
+17 silly loadAllDepsIntoIdealTree Starting
+18 silly install loadAllDepsIntoIdealTree
+19 silly fetchNamedPackageData express
+20 silly mapToRegistry name express
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry https://registry.npmjs.org/
+23 silly mapToRegistry data Result {
+23 silly mapToRegistry   raw: 'express',
+23 silly mapToRegistry   scope: null,
+23 silly mapToRegistry   escapedName: 'express',
+23 silly mapToRegistry   name: 'express',
+23 silly mapToRegistry   rawSpec: '',
+23 silly mapToRegistry   spec: 'latest',
+23 silly mapToRegistry   type: 'tag' }
+24 silly mapToRegistry uri https://registry.npmjs.org/express
+25 silly fetchNamedPackageData mysql
+26 silly mapToRegistry name mysql
+27 silly mapToRegistry using default registry
+28 silly mapToRegistry registry https://registry.npmjs.org/
+29 silly mapToRegistry data Result {
+29 silly mapToRegistry   raw: 'mysql',
+29 silly mapToRegistry   scope: null,
+29 silly mapToRegistry   escapedName: 'mysql',
+29 silly mapToRegistry   name: 'mysql',
+29 silly mapToRegistry   rawSpec: '',
+29 silly mapToRegistry   spec: 'latest',
+29 silly mapToRegistry   type: 'tag' }
+30 silly mapToRegistry uri https://registry.npmjs.org/mysql
+31 verbose request uri https://registry.npmjs.org/mysql
+32 verbose request no auth needed
+33 info attempt registry request try #1 at 10:27:17
+34 verbose request id 87c7525b2319b596
+35 verbose etag "5aaa4a36-24a17"
+36 verbose lastModified Thu, 15 Mar 2018 10:25:58 GMT
+37 http request GET https://registry.npmjs.org/mysql
+38 verbose request uri https://registry.npmjs.org/express
+39 verbose request no auth needed
+40 info attempt registry request try #1 at 10:27:17
+41 verbose etag "5aef8242-94f3a"
+42 verbose lastModified Sun, 6 May 2018 22:31:30 GMT
+43 http request GET https://registry.npmjs.org/express
+44 http 304 https://registry.npmjs.org/mysql
+45 verbose headers { date: 'Wed, 09 May 2018 04:57:17 GMT',
+45 verbose headers   via: '1.1 varnish',
+45 verbose headers   'cache-control': 'max-age=300',
+45 verbose headers   etag: '"5aaa4a36-24a17"',
+45 verbose headers   age: '212',
+45 verbose headers   connection: 'keep-alive',
+45 verbose headers   'x-served-by': 'cache-bom18227-BOM',
+45 verbose headers   'x-cache': 'HIT',
+45 verbose headers   'x-cache-hits': '1',
+45 verbose headers   'x-timer': 'S1525841837.272229,VS0,VE0',
+45 verbose headers   vary: 'Accept-Encoding, Accept' }
+46 silly get cb [ 304,
+46 silly get   { date: 'Wed, 09 May 2018 04:57:17 GMT',
+46 silly get     via: '1.1 varnish',
+46 silly get     'cache-control': 'max-age=300',
+46 silly get     etag: '"5aaa4a36-24a17"',
+46 silly get     age: '212',
+46 silly get     connection: 'keep-alive',
+46 silly get     'x-served-by': 'cache-bom18227-BOM',
+46 silly get     'x-cache': 'HIT',
+46 silly get     'x-cache-hits': '1',
+46 silly get     'x-timer': 'S1525841837.272229,VS0,VE0',
+46 silly get     vary: 'Accept-Encoding, Accept' } ]
+47 verbose etag https://registry.npmjs.org/mysql from cache
+48 verbose get saving mysql to C:\Users\Rajat\AppData\Roaming\npm-cache\registry.npmjs.org\mysql\.cache.json
+49 verbose correctMkdir C:\Users\Rajat\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+50 http 304 https://registry.npmjs.org/express
+51 verbose headers { date: 'Wed, 09 May 2018 04:57:17 GMT',
+51 verbose headers   via: '1.1 varnish',
+51 verbose headers   'cache-control': 'max-age=300',
+51 verbose headers   etag: '"5aef8242-94f3a"',
+51 verbose headers   age: '7675',
+51 verbose headers   connection: 'keep-alive',
+51 verbose headers   'x-served-by': 'cache-bom18226-BOM',
+51 verbose headers   'x-cache': 'HIT',
+51 verbose headers   'x-cache-hits': '1',
+51 verbose headers   'x-timer': 'S1525841837.275272,VS0,VE1',
+51 verbose headers   vary: 'Accept-Encoding, Accept' }
+52 silly get cb [ 304,
+52 silly get   { date: 'Wed, 09 May 2018 04:57:17 GMT',
+52 silly get     via: '1.1 varnish',
+52 silly get     'cache-control': 'max-age=300',
+52 silly get     etag: '"5aef8242-94f3a"',
+52 silly get     age: '7675',
+52 silly get     connection: 'keep-alive',
+52 silly get     'x-served-by': 'cache-bom18226-BOM',
+52 silly get     'x-cache': 'HIT',
+52 silly get     'x-cache-hits': '1',
+52 silly get     'x-timer': 'S1525841837.275272,VS0,VE1',
+52 silly get     vary: 'Accept-Encoding, Accept' } ]
+53 verbose etag https://registry.npmjs.org/express from cache
+54 verbose get saving express to C:\Users\Rajat\AppData\Roaming\npm-cache\registry.npmjs.org\express\.cache.json
+55 verbose correctMkdir C:\Users\Rajat\AppData\Roaming\npm-cache correctMkdir already in flight; waiting
+56 silly resolveWithNewModule express@4.16.3 checking installable status
+57 silly cache add args [ 'express@^4.16.3', null ]
+58 verbose cache add spec express@^4.16.3
+59 silly cache add parsed spec Result {
+59 silly cache add   raw: 'express@^4.16.3',
+59 silly cache add   scope: null,
+59 silly cache add   escapedName: 'express',
+59 silly cache add   name: 'express',
+59 silly cache add   rawSpec: '^4.16.3',
+59 silly cache add   spec: '>=4.16.3 <5.0.0',
+59 silly cache add   type: 'range' }
+60 silly addNamed express@>=4.16.3 <5.0.0
+61 verbose addNamed ">=4.16.3 <5.0.0" is a valid semver range for express
+62 silly addNameRange { name: 'express', range: '>=4.16.3 <5.0.0', hasData: false }
+63 silly mapToRegistry name express
+64 silly mapToRegistry using default registry
+65 silly mapToRegistry registry https://registry.npmjs.org/
+66 silly mapToRegistry data Result {
+66 silly mapToRegistry   raw: 'express',
+66 silly mapToRegistry   scope: null,
+66 silly mapToRegistry   escapedName: 'express',
+66 silly mapToRegistry   name: 'express',
+66 silly mapToRegistry   rawSpec: '',
+66 silly mapToRegistry   spec: 'latest',
+66 silly mapToRegistry   type: 'tag' }
+67 silly mapToRegistry uri https://registry.npmjs.org/express
+68 verbose addNameRange registry:https://registry.npmjs.org/express not in flight; fetching
+69 silly fetchNamedPackageData No valid target from cache, forcing network
+70 verbose request uri https://registry.npmjs.org/mysql
+71 verbose request no auth needed
+72 info attempt registry request try #1 at 10:27:18
+73 http request GET https://registry.npmjs.org/mysql
+74 verbose get https://registry.npmjs.org/express not expired, no request
+75 silly addNameRange number 2 { name: 'express', range: '>=4.16.3 <5.0.0', hasData: true }
+76 silly addNameRange versions [ 'express',
+76 silly addNameRange   [ '0.14.0',
+76 silly addNameRange     '0.14.1',
+76 silly addNameRange     '1.0.0',
+76 silly addNameRange     '1.0.1',
+76 silly addNameRange     '1.0.2',
+76 silly addNameRange     '1.0.3',
+76 silly addNameRange     '1.0.4',
+76 silly addNameRange     '1.0.5',
+76 silly addNameRange     '1.0.6',
+76 silly addNameRange     '1.0.7',
+76 silly addNameRange     '1.0.8',
+76 silly addNameRange     '2.0.0',
+76 silly addNameRange     '2.1.0',
+76 silly addNameRange     '2.1.1',
+76 silly addNameRange     '2.2.0',
+76 silly addNameRange     '2.2.1',
+76 silly addNameRange     '2.2.2',
+76 silly addNameRange     '2.3.0',
+76 silly addNameRange     '2.3.1',
+76 silly addNameRange     '2.3.2',
+76 silly addNameRange     '2.3.3',
+76 silly addNameRange     '2.3.4',
+76 silly addNameRange     '2.3.5',
+76 silly addNameRange     '2.3.6',
+76 silly addNameRange     '2.3.7',
+76 silly addNameRange     '2.3.8',
+76 silly addNameRange     '2.3.9',
+76 silly addNameRange     '2.3.10',
+76 silly addNameRange     '2.3.11',
+76 silly addNameRange     '2.3.12',
+76 silly addNameRange     '2.4.0',
+76 silly addNameRange     '2.4.1',
+76 silly addNameRange     '2.4.2',
+76 silly addNameRange     '2.4.3',
+76 silly addNameRange     '2.4.4',
+76 silly addNameRange     '2.4.5',
+76 silly addNameRange     '2.4.6',
+76 silly addNameRange     '2.4.7',
+76 silly addNameRange     '2.5.0',
+76 silly addNameRange     '2.5.1',
+76 silly addNameRange     '2.5.2',
+76 silly addNameRange     '2.5.3',
+76 silly addNameRange     '2.5.4',
+76 silly addNameRange     '2.5.5',
+76 silly addNameRange     '2.5.6',
+76 silly addNameRange     '2.5.7',
+76 silly addNameRange     '2.5.8',
+76 silly addNameRange     '2.5.9',
+76 silly addNameRange     '2.5.10',
+76 silly addNameRange     '2.5.11',
+76 silly addNameRange     '3.0.0',
+76 silly addNameRange     '3.0.1',
+76 silly addNameRange     '3.0.2',
+76 silly addNameRange     '3.0.3',
+76 silly addNameRange     '3.0.4',
+76 silly addNameRange     '3.0.5',
+76 silly addNameRange     '3.0.6',
+76 silly addNameRange     '3.1.0',
+76 silly addNameRange     '3.1.1',
+76 silly addNameRange     '3.1.2',
+76 silly addNameRange     '3.2.0',
+76 silly addNameRange     '3.2.1',
+76 silly addNameRange     '3.2.2',
+76 silly addNameRange     '3.2.3',
+76 silly addNameRange     '3.2.4',
+76 silly addNameRange     '3.2.5',
+76 silly addNameRange     '3.2.6',
+76 silly addNameRange     '3.3.0',
+76 silly addNameRange     '3.3.1',
+76 silly addNameRange     '3.3.2',
+76 silly addNameRange     '3.3.3',
+76 silly addNameRange     '3.3.4',
+76 silly addNameRange     '3.3.5',
+76 silly addNameRange     '3.3.6',
+76 silly addNameRange     '1.0.0-beta',
+76 silly addNameRange     '1.0.0-beta2',
+76 silly addNameRange     '1.0.0-rc',
+76 silly addNameRange     '1.0.0-rc2',
+76 silly addNameRange     '1.0.0-rc3',
+76 silly addNameRange     '1.0.0-rc4',
+76 silly addNameRange     '2.0.0-beta',
+76 silly addNameRange     '2.0.0-beta2',
+76 silly addNameRange     '2.0.0-beta3',
+76 silly addNameRange     '2.0.0-rc',
+76 silly addNameRange     '2.0.0-rc2',
+76 silly addNameRange     '2.0.0-rc3',
+76 silly addNameRange     '3.0.0-alpha1',
+76 silly addNameRange     '3.0.0-alpha2',
+76 silly addNameRange     '3.0.0-alpha3',
+76 silly addNameRange     '3.0.0-alpha4',
+76 silly addNameRange     '3.0.0-alpha5',
+76 silly addNameRange     '3.0.0-beta1',
+76 silly addNameRange     '3.0.0-beta2',
+76 silly addNameRange     '3.0.0-beta3',
+76 silly addNameRange     '3.0.0-beta4',
+76 silly addNameRange     '3.0.0-beta6',
+76 silly addNameRange     '3.0.0-beta7',
+76 silly addNameRange     '3.0.0-rc1',
+76 silly addNameRange     '3.0.0-rc2',
+76 silly addNameRange     '3.0.0-rc3',
+76 silly addNameRange     ... 159 more items ] ]
+77 silly addNamed express@4.16.3
+78 verbose addNamed "4.16.3" is a plain semver version for express
+79 silly cache afterAdd express@4.16.3
+80 verbose afterAdd C:\Users\Rajat\AppData\Roaming\npm-cache\express\4.16.3\package\package.json not in flight; writing
+81 verbose correctMkdir C:\Users\Rajat\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+82 verbose afterAdd C:\Users\Rajat\AppData\Roaming\npm-cache\express\4.16.3\package\package.json written
+83 http 200 https://registry.npmjs.org/mysql
+84 verbose headers { 'content-type': 'application/json; charset=UTF-8',
+84 verbose headers   server: 'UploadServer',
+84 verbose headers   'cache-control': 'max-age=300',
+84 verbose headers   'last-modified': 'Thu, 15 Mar 2018 10:25:58 GMT',
+84 verbose headers   etag: '"5aaa4a36-24a17"',
+84 verbose headers   'x-npm-region': 'Asia-South',
+84 verbose headers   'content-encoding': 'gzip',
+84 verbose headers   'content-length': '29066',
+84 verbose headers   'accept-ranges': 'bytes',
+84 verbose headers   date: 'Wed, 09 May 2018 04:57:17 GMT',
+84 verbose headers   via: '1.1 varnish',
+84 verbose headers   age: '212',
+84 verbose headers   connection: 'keep-alive',
+84 verbose headers   'x-served-by': 'cache-bom18227-BOM',
+84 verbose headers   'x-cache': 'HIT',
+84 verbose headers   'x-cache-hits': '2',
+84 verbose headers   'x-timer': 'S1525841838.507183,VS0,VE0',
+84 verbose headers   vary: 'Accept-Encoding, Accept' }
+85 silly get cb [ 200,
+85 silly get   { 'content-type': 'application/json; charset=UTF-8',
+85 silly get     server: 'UploadServer',
+85 silly get     'cache-control': 'max-age=300',
+85 silly get     'last-modified': 'Thu, 15 Mar 2018 10:25:58 GMT',
+85 silly get     etag: '"5aaa4a36-24a17"',
+85 silly get     'x-npm-region': 'Asia-South',
+85 silly get     'content-encoding': 'gzip',
+85 silly get     'content-length': '29066',
+85 silly get     'accept-ranges': 'bytes',
+85 silly get     date: 'Wed, 09 May 2018 04:57:17 GMT',
+85 silly get     via: '1.1 varnish',
+85 silly get     age: '212',
+85 silly get     connection: 'keep-alive',
+85 silly get     'x-served-by': 'cache-bom18227-BOM',
+85 silly get     'x-cache': 'HIT',
+85 silly get     'x-cache-hits': '2',
+85 silly get     'x-timer': 'S1525841838.507183,VS0,VE0',
+85 silly get     vary: 'Accept-Encoding, Accept' } ]
+86 verbose get saving mysql to C:\Users\Rajat\AppData\Roaming\npm-cache\registry.npmjs.org\mysql\.cache.json
+87 verbose correctMkdir C:\Users\Rajat\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+88 silly fetchPackageMetaData Error: No compatible version found: mysql@^5.7.18-log
+88 silly fetchPackageMetaData Valid install targets:
+88 silly fetchPackageMetaData 2.15.0, 2.14.1, 2.14.0, 2.13.0, 2.12.0, 2.11.1, 2.11.0, 2.10.2, 2.10.1, 2.10.0, 2.9.0, 2.8.0, 2.7.0, 2.6.2, 2.6.1, 2.6.0, 2.5.5, 2.5.4, 2.5.3, 2.5.2, 2.5.1, 2.5.0, 2.4.3, 2.4.2, 2.4.1, 2.4.0, 2.3.2, 2.3.1, 2.3.0, 2.2.0, 2.1.1, 2.1.0, 2.0.1, 2.0.0, 2.0.0-rc2, 2.0.0-rc1, 2.0.0-alpha9, 2.0.0-alpha8, 2.0.0-alpha7, 2.0.0-alpha6, 2.0.0-alpha5, 2.0.0-alpha4, 2.0.0-alpha3, 2.0.0-alpha2, 2.0.0-alpha, 0.9.6, 0.9.5, 0.9.4, 0.9.3, 0.9.2, 0.9.1, 0.9.0, 0.8.0, 0.7.0, 0.6.0, 0.5.0, 0.4.0, 0.3.0, 0.2.0, 0.1.0
+88 silly fetchPackageMetaData
+88 silly fetchPackageMetaData     at pickVersionFromRegistryDocument (C:\Program Files\nodejs\node_modules\npm\lib\fetch-package-metadata.js:170:16)
+88 silly fetchPackageMetaData     at C:\Program Files\nodejs\node_modules\npm\node_modules\iferr\index.js:13:50
+88 silly fetchPackageMetaData     at C:\Program Files\nodejs\node_modules\npm\lib\utils\pulse-till-done.js:20:8
+88 silly fetchPackageMetaData     at saved (C:\Program Files\nodejs\node_modules\npm\lib\cache\caching-client.js:174:7)
+88 silly fetchPackageMetaData     at C:\Program Files\nodejs\node_modules\npm\node_modules\graceful-fs\polyfills.js:210:7
+88 silly fetchPackageMetaData     at FSReqWrap.oncomplete (fs.js:149:20)
+88 silly fetchPackageMetaData  error for mysql@^5.7.18-log Error: No compatible version found: mysql@^5.7.18-log
+88 silly fetchPackageMetaData Valid install targets:
+88 silly fetchPackageMetaData 2.15.0, 2.14.1, 2.14.0, 2.13.0, 2.12.0, 2.11.1, 2.11.0, 2.10.2, 2.10.1, 2.10.0, 2.9.0, 2.8.0, 2.7.0, 2.6.2, 2.6.1, 2.6.0, 2.5.5, 2.5.4, 2.5.3, 2.5.2, 2.5.1, 2.5.0, 2.4.3, 2.4.2, 2.4.1, 2.4.0, 2.3.2, 2.3.1, 2.3.0, 2.2.0, 2.1.1, 2.1.0, 2.0.1, 2.0.0, 2.0.0-rc2, 2.0.0-rc1, 2.0.0-alpha9, 2.0.0-alpha8, 2.0.0-alpha7, 2.0.0-alpha6, 2.0.0-alpha5, 2.0.0-alpha4, 2.0.0-alpha3, 2.0.0-alpha2, 2.0.0-alpha, 0.9.6, 0.9.5, 0.9.4, 0.9.3, 0.9.2, 0.9.1, 0.9.0, 0.8.0, 0.7.0, 0.6.0, 0.5.0, 0.4.0, 0.3.0, 0.2.0, 0.1.0
+88 silly fetchPackageMetaData
+88 silly fetchPackageMetaData     at pickVersionFromRegistryDocument (C:\Program Files\nodejs\node_modules\npm\lib\fetch-package-metadata.js:170:16)
+88 silly fetchPackageMetaData     at C:\Program Files\nodejs\node_modules\npm\node_modules\iferr\index.js:13:50
+88 silly fetchPackageMetaData     at C:\Program Files\nodejs\node_modules\npm\lib\utils\pulse-till-done.js:20:8
+88 silly fetchPackageMetaData     at saved (C:\Program Files\nodejs\node_modules\npm\lib\cache\caching-client.js:174:7)
+88 silly fetchPackageMetaData     at C:\Program Files\nodejs\node_modules\npm\node_modules\graceful-fs\polyfills.js:210:7
+88 silly fetchPackageMetaData     at FSReqWrap.oncomplete (fs.js:149:20)
+89 silly rollbackFailedOptional Starting
+90 silly rollbackFailedOptional Finishing
+91 silly runTopLevelLifecycles Starting
+92 silly runTopLevelLifecycles Finishing
+93 silly install printInstalled
+94 verbose stack Error: No compatible version found: mysql@^5.7.18-log
+94 verbose stack Valid install targets:
+94 verbose stack 2.15.0, 2.14.1, 2.14.0, 2.13.0, 2.12.0, 2.11.1, 2.11.0, 2.10.2, 2.10.1, 2.10.0, 2.9.0, 2.8.0, 2.7.0, 2.6.2, 2.6.1, 2.6.0, 2.5.5, 2.5.4, 2.5.3, 2.5.2, 2.5.1, 2.5.0, 2.4.3, 2.4.2, 2.4.1, 2.4.0, 2.3.2, 2.3.1, 2.3.0, 2.2.0, 2.1.1, 2.1.0, 2.0.1, 2.0.0, 2.0.0-rc2, 2.0.0-rc1, 2.0.0-alpha9, 2.0.0-alpha8, 2.0.0-alpha7, 2.0.0-alpha6, 2.0.0-alpha5, 2.0.0-alpha4, 2.0.0-alpha3, 2.0.0-alpha2, 2.0.0-alpha, 0.9.6, 0.9.5, 0.9.4, 0.9.3, 0.9.2, 0.9.1, 0.9.0, 0.8.0, 0.7.0, 0.6.0, 0.5.0, 0.4.0, 0.3.0, 0.2.0, 0.1.0
+94 verbose stack
+94 verbose stack     at pickVersionFromRegistryDocument (C:\Program Files\nodejs\node_modules\npm\lib\fetch-package-metadata.js:170:16)
+94 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\iferr\index.js:13:50
+94 verbose stack     at C:\Program Files\nodejs\node_modules\npm\lib\utils\pulse-till-done.js:20:8
+94 verbose stack     at saved (C:\Program Files\nodejs\node_modules\npm\lib\cache\caching-client.js:174:7)
+94 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\graceful-fs\polyfills.js:210:7
+94 verbose stack     at FSReqWrap.oncomplete (fs.js:149:20)
+95 verbose cwd F:\WEB TECH PROJECTS\Software Engineering Project 6th sem\github-variant\meghali-work\node server
+96 error Windows_NT 10.0.16299
+97 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
+98 error node v9.4.0
+99 error npm  v3.10.3
+100 error No compatible version found: mysql@^5.7.18-log
+100 error Valid install targets:
+100 error 2.15.0, 2.14.1, 2.14.0, 2.13.0, 2.12.0, 2.11.1, 2.11.0, 2.10.2, 2.10.1, 2.10.0, 2.9.0, 2.8.0, 2.7.0, 2.6.2, 2.6.1, 2.6.0, 2.5.5, 2.5.4, 2.5.3, 2.5.2, 2.5.1, 2.5.0, 2.4.3, 2.4.2, 2.4.1, 2.4.0, 2.3.2, 2.3.1, 2.3.0, 2.2.0, 2.1.1, 2.1.0, 2.0.1, 2.0.0, 2.0.0-rc2, 2.0.0-rc1, 2.0.0-alpha9, 2.0.0-alpha8, 2.0.0-alpha7, 2.0.0-alpha6, 2.0.0-alpha5, 2.0.0-alpha4, 2.0.0-alpha3, 2.0.0-alpha2, 2.0.0-alpha, 0.9.6, 0.9.5, 0.9.4, 0.9.3, 0.9.2, 0.9.1, 0.9.0, 0.8.0, 0.7.0, 0.6.0, 0.5.0, 0.4.0, 0.3.0, 0.2.0, 0.1.0
+101 error If you need help, you may report this error at:
+101 error     <https://github.com/npm/npm/issues>
+102 verbose exit [ 1, true ]

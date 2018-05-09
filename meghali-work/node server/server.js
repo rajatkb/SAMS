@@ -1,10 +1,14 @@
 const express = require('express');
-var pool = require('./pool');
 const bodyParser = require('body-parser');
-const app = express();
+
+var pool = require('./pool');
+
+
 const product = require('./products');
 const port = 3000;
 
+
+const app = express();
 //product.init();
 //var data1={id:"a101", name:"maggi",brand_name:"maggi", category_name:"food",description:"lorem ipsum",price:20};
 
