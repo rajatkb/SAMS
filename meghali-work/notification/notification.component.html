@@ -1,0 +1,17 @@
+
+<div class="notification_container">
+  <div class="box_for_animation" *ngFor="let item of messageList">
+    <div  class="only_for_border" [style.background-color]="getRandomColor()">
+        <div  class="card"  > 
+          <div class="container transaction_id_container">
+            <div class="row transaction_id_row">
+              <div class="col-md-9 message"><strong>{{ item.mes }}</strong></div>
+              <div class="col-md-3"><i class="fa fa-bell" [style.color]="getRandomColor()"></i></div>
+            </div>
+          </div>
+          <div class="transaction_id"><strong>Transaction ID:</strong> 10248</div>
+          
+        </div>
+    </div>
+    </div>
+</div>
