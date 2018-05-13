@@ -1,0 +1,20 @@
+{
+    "id": "a101",
+    "name": "maggi",
+    "brand_name": "maggi",
+    "category_name": "food",
+    "description": "noodles",
+    "price": 12,
+    "status": 1
+   ,"picture_url":"https://5.imimg.com/data5/WB/PX/MY-8033205/maggi-noodles-500x500.jpg"}
+
+{
+    "id": "a102",
+    "name": "Top ramen noodles",
+    "brand_name": "ramen",
+    "category_name": "food",
+    "description": "noodles",
+    "price": 10,
+    "status": 1
+ , "picture_url":"https://i.ebayimg.com/images/i/253259204334-0-1/s-l1000.jpg" }
+

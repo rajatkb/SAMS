@@ -1,12 +1,36 @@
 let express = require('express');
-let database = require('./db/database');
-let productsDB = require('./db/products');
+let bodyParser = require('body-parser');
 
-database.query("select 1+1 as sum",null,(rows)=>{
-    console.log(rows[0]);
+
+let database = require('./db/database');
+let app = express();
+let port = 8007;
+
+app.use(bodyParser.urlencoded({ extended: true}));
+app.use(bodyParser.json());
+
+// for CROSS Origin request
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+    next();
+  });
+
+//routes
+let products = require('./routes/products.route')(app);
+let warehouse = require('./routes/warehouse.route')(app);
+
+app.listen(port,"localhost",(err) => {
+    if(!err)
+        console.log("server running at port : "+port);
+    else
+        console.log("log: failed "+err);
 });
-var data1={id:"a101", name:"maggi",brand_name:"maggi", category_name:"food",description:"lorem ipsum",price:20,status:true};
-productsDB.create(data1);
+
+ 
+
+
 
 
 

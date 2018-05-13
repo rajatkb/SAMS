@@ -31,16 +31,20 @@ module.exports = (function(){
     function _query(sql , params , callback){
         connectionState.then((results) => {
             pool.getConnection(function(err,connection){
+                // The error object if not true will mean that
+                // the connection was successfull
                 if(!err)
                 {
+                    // the query will result error otherwise empty object
+                    // if connection query fails
                     connection.query(sql,params,function(error , results , fields){
-                        if(error){
+                        if(error){ // if it fails
                             console.log("log: error at db/database/query "+error.message);
-                            callback(null);
+                            callback(error, false);
                         }
-                        else{
+                        else{ // if it succeed
                             console.log("log: query succesfull at db/database/query");
-                            callback(results);
+                            callback(false, results);
                         }
                         connection.release();
                     });
