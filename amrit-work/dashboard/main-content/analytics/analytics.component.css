@@ -3,3 +3,12 @@
 * {
   font-family: 'Quicksand' !important;
 }
+
+.row-charts {
+	padding: 10px 2px;
+}
+
+.box-for-chart {
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+	border-radius: 5px;
+}
