@@ -62,5 +62,6 @@ export class OrdersComponent implements OnInit {
   placeDelivery() {
     //console.log(this.productsSelected);
     this.productsSelected.splice(0, this.productsSelected.length);
+    this.totalBill = 0;
   }
 }
