@@ -1,0 +1,12 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" [ngClass] = "{active: hideOrders === false}" (click) = "onTabSelect($event)">ORDER</a>
+  </li>
+  <li class="nav-item" (click) = "onTabSelect($event)">
+    <a class="nav-link" [ngClass] = "{active: hideSales === false}">SALE</a>
+  </li>
+</ul>
+<app-orders [ngClass] = "{hide_orders: hideOrders === true}"></app-orders>
+<app-sales [ngClass] = "{hide_sales: hideSales === true}"></app-sales>
+
+

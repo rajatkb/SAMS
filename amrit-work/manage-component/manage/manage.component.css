@@ -1,0 +1,35 @@
+app-orders, app-sales {
+	transition: all 800ms;
+}
+
+.hide_orders {
+	display: none;
+}
+
+.hide_sales {
+	display: none;
+}
+
+/*.orders-super-div, .sales-super-div {
+	display: inline;
+}*/
+
+/*
+
+
+.hide_orders {
+	position: relative;
+	transition: all 1000ms;
+	left: -2000%;
+	display: none;
+}
+
+.hide_sales {
+	position: relative;
+	transition: all 1000ms;
+	left: 2000%;
+	display: none;
+}
+
+
+*/
