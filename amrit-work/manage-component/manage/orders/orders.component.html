@@ -4,7 +4,7 @@
       <h3>PLACE AN ORDER</h3>
     </div>
     <div class="col-md-4">
-      <button class="btn btn-danger btn-lg order-btn" (click)="placeDelivery()">PLACE ORDER</button>
+      <button class="btn btn-danger btn-lg order-btn" (click)="placeOrder()">PLACE ORDER</button>
       <button class="btn btn-success btn-lg total-amt-btn">TOTAL : {{ totalBill }}</button>
     </div>
   </div>
@@ -17,12 +17,12 @@
          <th>Quantity</th>
         <th></th>
       </tr>
-      <tr *ngFor = "let element of productsSelected; let i = index" [attr.data-index]="i">
-        <td><img src="{{ (allProducts[element['id']])['picture_url'] }}" alt="" /></td>
-        <td class="add-font">{{ (allProducts[element['id']])['id'] }}</td>
-        <td class="add-font">{{ (allProducts[element['id']])['name'] }}</td>
-        <td class="add-font">{{ (allProducts[element['id']])['price'] }}</td>
-        <td class="add-font">{{ element['quantity'] }}</td>
+      <tr *ngFor = "let id of productsSelected; let i = index" [attr.data-index]="i">
+        <td><img src="{{ allProducts[id]['picture_url'] }}" alt="" /></td>
+        <td class="add-font">{{ allProducts[id]['id'] }}</td>
+        <td class="add-font">{{ allProducts[id]['name'] }}</td>
+        <td class="add-font">{{ allProducts[id]['price'] }}</td>
+        <td class="add-font">{{ itemsSelected[id] }}</td>
         <td class="add-font"><i class="fa fa-trash delete_icon" aria-hidden="true" (click) = "deleteFromOrders(i)"></i></td>
       </tr>
    </table>
