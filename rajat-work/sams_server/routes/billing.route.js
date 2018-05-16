@@ -42,7 +42,7 @@ module.exports = function(app){
     });
 
     app.put('/productBilling/:transactionId',function(request , response){
-        billingDB.updateProductDeliveryStatus( request.params.transactionId,request.body.count,(err,result) => {
+        billingDB.updateProductDeliveryStatus( request.params.transactionId,request.body.deliveryStatus,(err,result) => {
             if(!err)
                 response.json({ message: "changed state"});
             else
