@@ -1,0 +1,15 @@
+{
+  "name": "sams_server",
+  "version": "1.0.0",
+  "description": "\"\"\u001b[software_engineering_project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "rajat_meghali_amrit",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
