@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Product } from '../../models/product.model';
+import {Md5} from 'ts-md5/dist/md5';
 
 @Component({
   selector: 'app-sales',
@@ -18,15 +19,22 @@ export class SalesComponent implements OnInit {
     'A209': new Product('A209', 'Yippee6', "brand6", "category6", "noodles", 10, false, 'https://www.nestle.in/asset-library/PublishingImages/revamp/brands/pdca/inner_images/1_newmaggipackshot_inner2017.jpg')
   };
 
-  productsSelected:Object[] = [];
+  transactionData:{[key: string] : any} = {};
   productsYetToSelect:string[] = [];
+  productsSelected:string[] = [];
 
   totalBill: number = 0;
+  itemsSelected:{ [id: string] : number} = {};
 
   constructor() { }
 
   ngOnInit() {
+    this.populateDropdown();
+  }
 
+  populateDropdown() {
+
+    this.productsYetToSelect = [];
     for(let product in this.allProducts)
       if(this.allProducts[product]['status'] === true)
         this.productsYetToSelect.push(product);
@@ -35,35 +43,46 @@ export class SalesComponent implements OnInit {
 
   addToOrders(form: NgForm) {
 
+    let id = form.value.order_id;
+    let quantity = form.value.order_quantity;
+    
     for(let productId of this.productsYetToSelect) 
-      if(productId == form.value.order_id) {
+      if(productId == id) {
+
         let index = this.productsYetToSelect.indexOf(productId);
         if (index > -1) 
             this.productsYetToSelect.splice(index, 1);
-        this.productsSelected.push({
-          'id': form.value.order_id,
-          'quantity': form.value.order_quantity,
-          'status': true,
-          'isForSale': 1
-        });
-        this.totalBill = this.totalBill + (this.allProducts[form.value.order_id])['price'] * form.value.order_quantity;
+        this.itemsSelected[id] = quantity;
+        this.productsSelected.push(id);
+        this.totalBill = this.totalBill + (this.allProducts[id])['price'] * quantity;
         form.reset();
+      
       }
-
+  
   }
 
   deleteFromOrders(i: any) {
-    let temp:string = (this.productsSelected[i])['id'];
-    this.totalBill = this.totalBill - (this.allProducts[temp])['price'] * this.productsSelected[i]['quantity'];
+    let temp:string = (this.productsSelected[i]); 
+    this.totalBill = this.totalBill - (this.allProducts[temp])['price'] * this.itemsSelected[temp];
     this.productsSelected.splice(i, 1);
     this.productsYetToSelect.push(temp);
 
   }
 
   placeDelivery() {
-    //console.log(this.productsSelected);
+    
+    let time = new Date();
+    this.transactionData['date'] = time.toISOString().substring(0, 10);
+    this.transactionData['time'] = time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+    this.transactionData['category'] = 1;
+    this.transactionData['deliveryStatus'] = true;
+    this.transactionData['items'] = this.itemsSelected;
+    this.transactionData['transactionId'] = Md5.hashStr((this.transactionData).toString());
+    this.itemsSelected = {};
+    this.populateDropdown();
     this.productsSelected.splice(0, this.productsSelected.length);
     this.totalBill = 0;
+  
   }
 
 }
