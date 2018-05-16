@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+div.flash-message.custom-danger-alert{
+    position: static;
+    background: red;
+    color: white;
+    border-radius: 1%;
+    border: 2px solid crimson;
+    margin: auto;
+    width: 50%;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.6);
+}
+
+div.flash-message.custom-success-alert{
+    position: static;
+    background: green;
+    color: white;
+    border-radius: 1%;
+    margin: auto;
+    width: 50%;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.6);
+}
+
+
+div.flash-message p{
+    margin: 0px;
+}

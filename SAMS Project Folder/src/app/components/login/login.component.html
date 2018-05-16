@@ -1,0 +1,48 @@
+<div class="page-background"></div>
+<div class="auth-page-container">
+    <div class="auth-main">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="login-form">
+                        <div class="login-wrap">
+                            <div class="login-html">
+                                <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab brand_name">S. A. M. S</label>
+                                <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
+                                <div class="login-form">
+                                    <div class="sign-in-htm">
+                                        <div class="group">
+                                            <label for="user" class="label">Username</label>
+                                            <input id="user" type="text" [(ngModel)]="username" name="username" class="input">
+                                        </div>
+                                        <div class="group">
+                                            <label for="pass" class="label">Password</label>
+                                            <input id="pass" type="password" [(ngModel)]="password" name="password"  class="input" data-type="password">
+                                        </div>
+                                        <div class="group">
+                                            <input type="submit" class="button" (click)="onSubmit()" value="Sign In" id="sign-in-btn">
+                                        </div>
+                                        <div class="hr"></div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                </div>    
+            </div>
+            <div class="col-md-5">
+                <div class="right">
+                    <div class="time">
+                        <h3 class="curr-time"></h3><br>
+                    </div>
+                    <div class="app-desc">
+                        <p> S.A.M.S <b>(Stock Analysis and Management System)</b> a real time Inventory Management System.
+                            Build for retail allowing for monitoring of sale and inventory delivery and order live in real time.</p>
+                    </div>
+                    <div class="date"><br>
+                        <h3 class="curr-date"></h3>
+                    </div> 
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>

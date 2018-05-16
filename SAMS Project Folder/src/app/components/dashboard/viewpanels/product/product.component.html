@@ -1,0 +1,172 @@
+<div class="this_page">
+    <div class="info_bar">
+        <div class="product_container container">
+            <div class="row product_container_row">
+                <div class="col-sm-8">
+                        <div  class="add_new_product_form_container" > 
+                                <div class="add_new_product_form_div">
+                                    <form class="add_new_product_form" #form="ngForm" > 
+                                    <div class="form_title">ADD NEW PRODUCT <div *ngIf="!(id.errors || name.errors || brandname.errors || category.errors || price.errors || pictureurl.errors)" class="add_btn pull-right" (click)="addFieldValue(form);">ADD</div></div>
+                                    <div class="form-body">
+                                            <div class="container container_rows form-control">
+                                                <div class="row">
+                                                        <div class="col-sm-3" >
+                                                            <input [(ngModel)]="productToAdd.id" name="id" type="text" required minlength="4" #id="ngModel" placeholder="Product ID*">
+                                                            <div *ngIf="id.errors && (id.dirty)" style="color: red">
+                                                                    <span>invalid id !</span>
+                                                            </div>
+                                                        </div>
+                                                            
+                                                        <div class="col-sm-3">
+                                                            <input type="text" required minlength="2" #name="ngModel" [(ngModel)]="productToAdd.name" name="name" placeholder="Product Name*">
+                                                            <div *ngIf="name.errors && (name.dirty)" style="color: red">
+                                                                <span>invalid name !</span>
+                                                            </div>
+                                                        </div>                   
+                                                        
+                                                        <div class="col-sm-3">
+                                                            <input type="text" required minlength="2" #brandname="ngModel" [(ngModel)]="productToAdd.brand_name" name="brand" placeholder="Brand*">
+                                                            <div *ngIf="brandname.errors && (brandname.dirty)" style="color: red">
+                                                                <span>invalid brand name !</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-3"> 
+                                                            <input type="text" name="category" required minlength="2" #category="ngModel" [(ngModel)]="productToAdd.category_name" placeholder="Category*">
+                                                            <div *ngIf="category.errors && (category.dirty)" style="color: red">
+                                                                <span>invalid category !</span>
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                            <div class="container container_rows">
+                                                    <div class="row">
+                                                            <div class="col-sm-2">
+                                                                <input type="text" required pattern="[1-9][0-9]{0,7}$" #price="ngModel" [(ngModel)]="productToAdd.price" name="price" placeholder="Price*">
+                                                                <div *ngIf="price.errors && (price.dirty)" style="color: red">
+                                                                    <span>invalid price!</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" pattern="https?://.+" required minlength="7" #pictureurl="ngModel" [(ngModel)]="productToAdd.picture_url" name="photo_url" placeholder="http://something.com/something.jpg">
+                                                                <div *ngIf="pictureurl.errors && (pictureurl.dirty)" style="color: red">
+                                                                    <span>invalid url !</span>
+                                                                </div>
+                                                            </div> 
+                                                    </div>        
+                                            </div>
+                                            <div class="container container_rows">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <input type="text" required minlength="4" #description="ngModel" [(ngModel)]="productToAdd.description" name="desc" placeholder="Description*">
+                                                        <div *ngIf="description.errors && (description.dirty)" style="color: red">
+                                                            <span>invalid description !</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                    </div>
+                                    
+                                    
+                                    </form>
+                                </div>
+                            
+                            </div>
+                </div>
+                <div class="col-sm-4 total_product_container_ka_container container">
+                    
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-10 total_product_container container">
+                        <div class="row">
+                            <div class="col-sm-8 total_product_no">
+                                20 <div class="card_name">PRODUCTS</div>
+
+                            </div>
+                            <div class="col-sm-2 total_product_icon"><i class="fa fa-shopping-cart cart_icon" aria-hidden="true"></i></div>   
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>   
+    </div>
+
+    <div *ngIf="keys.length == 0" style="text-align: center">
+        <img src="https://loading.io/spinners/double-ring/lg.double-ring-spinner.gif" alt=""> Loding Products . . .
+    </div>
+
+    <div *ngIf="keys.length != 0" class="table-users">
+        <div class="header">PRODUCTS</div>
+    
+        <table class="product_table" cellspacing="0">
+            <tr>
+                <th>PICTURE</th>
+                <th>PRODUCT ID</th>
+                <th>NAME</th>
+                <th>BRAND</th>
+                <th>CATEGORY</th>
+                <th>PRICE</th>
+                <th width="200" height="20">DESCRIPTION</th>             
+                <th width="150">WAREHOUSE COUNT </th>
+                <th width="150">SHELF COUNT</th>
+                <th>SOLD</th>
+                <th></th>
+            </tr>
+            <ng-container *ngFor="let key of keys;">
+                <tr *ngIf="productMap[key].status || productMap[key].status == 1">
+                    <td><img src="{{ productMap[key].picture_url }}" alt="" /></td>
+                    <td><a [routerLink]="[key]" >{{ productMap[key].id }}</a></td>
+                    <td>{{ productMap[key].name }}</td>
+                    <td>{{ productMap[key].brand_name }}</td>
+                    <td>{{ productMap[key].category_name }}</td>
+                    <td>{{ productMap[key].price }}</td>
+                    <td>{{ productMap[key].description }} </td>
+                    <td>{{ 0 }}</td>
+                    <td>{{ 0 }}</td>
+                    <td>{{ 0 }}</td>
+                    <td><i class="fa fa-trash delete_icon" (click)="toggleDelete(key);"aria-hidden="true"></i></td>
+                </tr>
+            </ng-container>
+                      
+        </table>
+    </div>
+    <div class="table-delete">
+        <div class="header2">DELETED PRODUCTS</div>
+    
+        <table class="delete_table" cellspacing="0">
+            <tr>
+                <th>PICTURE</th>
+                <th>PRODUCT ID</th>
+                <th>NAME</th>
+                <th>BRAND</th>
+                <th>CTEGORY</th>
+                <th>PRICE</th>
+                <th width="230">DESCRIPTION</th>
+                <th width="150">WAREHOUSE COUNT</th>
+                <th width="150">SHELF COUNT</th>
+                <th>SOLD</th>
+                <th></th>
+            </tr>
+    
+            <ng-container *ngFor="let key of keys;">
+                <tr *ngIf="!productMap[key].status || productMap[key].status == 0">
+                    <td><img src="{{ productMap[key].picture_url }}" alt="" /></td>
+                    <td>{{ productMap[key].id }}</td>
+                    <td>{{ productMap[key].name }}</td>
+                    <td>{{ productMap[key].brand_name }}</td>
+                    <td>{{ productMap[key].category_name }}</td>
+                    <td>{{ productMap[key].price }}</td>
+                    <td>{{ productMap[key].description }} </td>
+                    <td>{{ 0 }}</td>
+                    <td>{{ 0 }}</td>
+                    <td>{{ 0 }}</td>
+                    <td><i class="fa fa-check insert_icon" (click)="toggleDelete(key);"aria-hidden="true"></i></td>
+                </tr>
+            </ng-container>
+            
+            
+            
+        </table>
+        </div>
+
+</div>

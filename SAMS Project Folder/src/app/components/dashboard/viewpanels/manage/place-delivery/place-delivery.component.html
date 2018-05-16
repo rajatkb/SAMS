@@ -1,0 +1,45 @@
+<div class="table-orders">
+   <div class="row orders-table-header">
+    <div class="col-md-8">
+      <h5>PLACE A DELIVERY</h5>
+    </div>
+    <div class="col-md-4">
+      <button class="btn btn-danger btn-md order-btn" (click)="placeOrder()">PLACE DELIVERY</button>
+      <button class="btn btn-success btn-md total-amt-btn">TOTAL : {{ totalBill }}</button>
+    </div>
+  </div>
+   <table cellspacing="0">
+      <tr>
+         <th>Product Image</th>
+         <th>Product ID</th>
+         <th>Name</th>
+         <th>Price</th>
+         <th>Quantity</th>
+        <th></th>
+      </tr>
+      <tr *ngFor = "let id of productsSelected; let i = index" >
+        <td><img src="{{ allProducts[id]['picture_url'] }}" alt="" /></td>
+        <td class="add-font">{{ allProducts[id]['id'] }}</td>
+        <td class="add-font">{{ allProducts[id]['name'] }}</td>
+        <td class="add-font">{{ allProducts[id]['price'] }}</td>
+        <td class="add-font">{{ itemsSelected[id] }}</td>
+        <td class="add-font"><i class="fa fa-trash delete_icon" aria-hidden="true" (click) = "deleteFromOrders(i)"></i></td>
+      </tr>
+   </table>
+</div>
+<form class="add-item-to-orders" (ngSubmit) = "addToOrders(newItemAdded)" #newItemAdded="ngForm">
+  <div class="form-group row">
+      <div class="col-md-5">
+        <select name="order_id_index" [(ngModel)]="order_id_index" class="form-control" placeholder="Product ID" >
+            <option *ngFor = "let product of productsYetToSelect; let i = index" value="{{ i }}">{{ product }}</option>
+        </select>
+      </div>
+      <div class="col-md-5">
+        <input  name="quantity" [(ngModel)]="quantity" type="number" class="form-control" placeholder="Quantity" >
+      </div>
+      <div class="col-md-1">
+        <button type="submit" class="btn btn-info add-item-btn">Add Item</button>
+      </div>
+  </div>
+</form>
+

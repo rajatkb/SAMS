@@ -1,0 +1,49 @@
+<div class="side_panel_container">
+    <div *ngIf="!currentUser" class="spinner">
+        <img src="https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/source.gif" >
+    </div>
+    <div *ngIf="currentUser" class="side_panel_profile">
+        <div class="profile_pic_container">
+            <div class="profile_pic" >
+                <img class="rounded-circle img" src="{{ currentUser.picture_url }}">
+            </div>
+        </div>
+        
+        <div class="profile_name">
+            {{ currentUser?.name | uppercase }} <i class="fa fa-pencil-square-o profile_edit" aria-hidden="true"></i>
+        </div>
+        <br>
+        <div class="profile_role">{{ currentUser?.role | uppercase }}</div>   
+    </div>
+    <ul class="side_bar_tab tabs">
+        <li class="tab manager_tab" [class.clicked]="manageClicked" >
+            <a  (click)="tabClicked('manage')">
+                <i class="pull-right fa fa-black-tie side_panel_icon" aria-hidden="true"></i> MANAGE 
+            </a>
+        </li>
+        <li class="tab sales_tab" [class.clicked]="salesClicked" >
+            <a (click)="tabClicked('sales')">
+                <i class="pull-right fa fa-suitcase side_panel_icon" aria-hidden="true"></i> SALES 
+            </a>
+        </li>
+        <li class="tab sales_tab" [class.clicked]="productClicked" >
+            <a  (click)="tabClicked('products')">
+                <i class="pull-right fa fa-product-hunt side_panel_icon" aria-hidden="true"></i> PRODUCT 
+            </a>
+        </li>
+        
+        <li *ngIf="currentUser?.role_id == 1" class="tab order_tab"  [class.clicked]="billingClicked" >
+            <a  (click)="tabClicked('billing')">
+                <i class="pull-right fa fa-shopping-cart side_panel_icon" aria-hidden="true"></i> BILLING 
+            </a>
+        </li>
+        <li *ngIf="currentUser?.role_id == 1" class="tab order_tab"  [class.clicked]="registerClicked" >
+            <a  (click)="tabClicked('register')">
+                <i class="pull-right fa fa-registered side_panel_icon" aria-hidden="true"></i> REGISTER 
+            </a>
+        </li>
+    </ul>
+    <div>
+        <a (click)="logOut()" class="logout-button">LogOut</a>
+    </div>
+</div>

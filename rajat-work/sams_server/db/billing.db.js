@@ -26,7 +26,7 @@ module.exports=(function(){
 		let new_data = {
                 id:data.id,
                 transactionId:data.transactionId,
-				        product_id:data.product_id,
+				product_id:data.product_id,
                 count:data.count,
                 status: data.status,
                 deliveryStatus:data.deliveryStatus,

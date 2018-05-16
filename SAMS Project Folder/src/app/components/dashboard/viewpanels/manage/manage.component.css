@@ -1,0 +1,35 @@
+.manage_template {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+#order_template_container, #sales_template_container {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+#order_template_container {
+	transition: all 200ms;
+}
+
+#sales_template_container {
+	transition: transform 200ms, visibility 1ms, opacity 1ms;
+}
+ 
+.hide_orders {
+	transform: translate(-200%);
+	height: 0;
+	opacity: 0;
+}
+
+.hide_sales {
+	opacity: 0;
+	height: 0;
+	visibility: hidden;
+	transform: translate(200%);
+}
+
+
+

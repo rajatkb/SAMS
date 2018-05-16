@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col-sm-8">
+    <div class="register-container">
+      <div class="page-header">
+        <h3>Register a New Employee</h3>
+      </div>
+      <form>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text"  required minlength="2" class="form-control" id="name" name="name" #name="ngModel" [(ngModel)]="newUser.name" placeholder="name">
+            <div *ngIf="name.errors && (name.dirty || name.touched)" style="color: red">
+              <span> enter the name properly</span>
+            </div>
+          </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="email">Email</label>
+            <input type="email" name="email" required minlength="5" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" [(ngModel)]="useremail" ng-pattern="" #email="ngModel" class="form-control" id="inputEmail4" placeholder="Email">
+            <div *ngIf="email.errors && (email.dirty || email.touched)" style="color: red">
+              <span> enter the email properly</span>
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">Password</label>
+            <input type="password"  class="form-control" required minlength="5" name="password" #password="ngModel" [(ngModel)]="userpass" id="inputPassword4" placeholder="Password">  
+            <div *ngIf="password.errors && (password.dirty || password.touched)" style="color: red">
+              <span> enter the password properly</span>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="pictureurl">Picture Url</label>
+          <input type="text" class="form-control" id="pictureurl" #pictureurl="ngModel" required minlength="10" pattern="https?://.+" name="picture_url" [(ngModel)]="newUser.picture_url" placeholder="http://somewhere.com/something.jpg">
+          <div *ngIf="pictureurl.errors && (pictureurl.dirty || pictureurl.touched)" style="color: red">
+            <span> enter the picture url properly</span>
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="role">Role</label>
+            <input type="text" class="form-control" id="role" #role="ngModel" required minlength="5" name="role" [(ngModel)]="newUser.role" placeholder="Manager / Employee / etc">
+            <div *ngIf="role.errors && (role.dirty || role.touched)" style="color: red">
+              <span> enter the role properly</span>
+            </div>
+          </div>
+        <div class="form-group">
+          <label for="priviledge">Administrative Priviledge Level</label>
+          <select id="priviledge"  name="role_id" [(ngModel)]="newUser.role_id"  class="form-control">
+            <option value=3 selected >3</option>
+            <option value=2>2</option>
+          </select>
+          <b>1. 2 is for administrative priviledge over product and related responsibility</b>
+          <br>
+          <b>2. 3 is for sales personal and personal at warehouse</b>
+        </div>
+        <button type="submit" (click)="onSubmit()" class="btn btn-primary">Register In</button>
+      </form>
+    </div>
+  </div>
+  <div class="col-sm-4"></div>
+</div>
+
