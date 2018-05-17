@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./analytics.component.css']
 })
 export class AnalyticsComponent implements OnInit {
+
+	period:string = (new Date()).toLocaleString("en-us", { month: "long" }) + ", " + (new Date()).getFullYear();
 	
   	ProductvsProfit =  {
 	  chartType: 'PieChart',
@@ -20,7 +22,8 @@ export class AnalyticsComponent implements OnInit {
 	  options: {
 	  	'title': 'Product - Profit', 
 	  	'height': 400, 
-	  	'is3D': true, 
+	  	//'is3D': true,
+	  	'pieHole': 0.4, 
 	  	'chartArea': {'width':'90%', 'height':'80%'}, 
 	  	'fontName': 'Quicksand',
 	  	'legend': {'position': 'bottom'},
@@ -41,10 +44,9 @@ export class AnalyticsComponent implements OnInit {
 	  ],
 	  options: {
 	  	'title': 'Profit - Time', 
-	  	'height': 400,
-	  	'chartArea': {'width':'85%', 'height':'70%'}, 
+	  	'height': 500,
+	  	'chartArea': {'width':'90%', 'height':'70%'}, 
 	  	'fontName': 'Quicksand',
-	  	/*'curveType': 'function',*/
 	  	'legend': {'position': 'top'},
 	  	'hAxis': {'title': 'Months'},
 		'vAxis': {'title': 'Profit'},
