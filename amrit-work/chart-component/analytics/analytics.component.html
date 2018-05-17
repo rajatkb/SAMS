@@ -1,19 +1,39 @@
-<div class="row row-charts">
-	<div class="col-md-6">
-		<div class="box-for-chart">
-			<google-chart [data]="ProductvsProfit"></google-chart>
+<!-- <div class="charts-container"> -->
+	<div class="row row-charts">
+		<div class="col-md-6">
+			<div class="box-for-chart">
+				<google-chart [data]="ProductvsProfit"></google-chart>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="box-for-chart">
+				<div class="card text-white bg-dark mb-3">
+				  <div class="card-header">S. A. M. S</div>
+				  <div class="card-body">
+				    <h2 class="card-title"> This month so far ... </h2>
+				    <h5 class="card-text"><strong># Products ordered</strong> - 43, 253</h5>
+				    <h5 class="card-text"><strong># Net Expense</strong> - $ 53, 327.65</h5>
+				    <h5 class="card-text"><strong># Outstanding Payments</strong> - $537.65</h5>
+				    <h5 class="card-text"><strong># Products sold</strong> - 134, 626</h5>
+				    <h5 class="card-text"><strong># Net Profit</strong> - $ 132, 537.65</h5>
+				    <div class="month-div">{{ period }}</div>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div> 
+	<div class="row row-charts">
+		<div class="col-md-12">
+			<div class="box-for-chart">
+				<google-chart [data]="ProfitvsTime"></google-chart>
+			</div>
 		</div>
 	</div>
-	<div class="col-md-6">
-		<div class="box-for-chart">
-			<google-chart [data]="ProfitvsTime"></google-chart>
+	<div class="row row-charts">
+		<div class="col-md-12">
+			<div class="box-for-chart">
+				<google-chart [data]="ProductvsSales"></google-chart>
+			</div>
 		</div>
 	</div>
-</div> 
-<div class="row row-charts">
-	<div class="col-md-12">
-		<div class="box-for-chart">
-			<google-chart [data]="ProductvsSales"></google-chart>
-		</div>
-	</div>
-</div>
+<!-- </div> -->
