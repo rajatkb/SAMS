@@ -4,6 +4,12 @@
   font-family: 'Quicksand' !important;
 }
 
+/*.charts-container {
+	background: url("https://ak4.picdn.net/shutterstock/videos/31595674/thumb/1.jpg?i10c=img.resize(height:160)");
+	background-repeat: no-repeat;
+	background-size: cover;
+}*/
+
 .row-charts {
 	padding: 10px 2px;
 }
@@ -11,4 +17,20 @@
 .box-for-chart {
 	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
 	border-radius: 5px;
+}
+
+.data-container {
+	padding: 15px 20px;
+}
+
+.month-div {
+	padding: 20px 40px;
+	background: #fff;
+	font-size: 30pt;
+	color: #000;
+	text-align: center;
+	min-width: 50%;
+	border-radius: 2px;
+	font-weight: 500;
+	float: right;
 }
