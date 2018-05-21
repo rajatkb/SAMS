@@ -20,11 +20,10 @@ export class AnalyticsComponent implements OnInit {
 	    ['Kissan Sauce', 777]
 	  ],
 	  options: {
-	  	'title': 'Product - Profit', 
-	  	'height': 400, 
+	  	'height': 355, 
 	  	//'is3D': true,
 	  	'pieHole': 0.4, 
-	  	'chartArea': {'width':'90%', 'height':'80%'}, 
+	  	'chartArea': {'width':'80%', 'height':'75%'}, 
 	  	'fontName': 'Quicksand',
 	  	'legend': {'position': 'bottom'},
 	  	'animation': {'duration': 800, 'easing': 'in', 'startup': true}
@@ -43,9 +42,8 @@ export class AnalyticsComponent implements OnInit {
         ['Jun', 76,   8.8, 53.6,  7.7],
 	  ],
 	  options: {
-	  	'title': 'Profit - Time', 
 	  	'height': 500,
-	  	'chartArea': {'width':'90%', 'height':'70%'}, 
+	  	'chartArea': {'width':'80%', 'height':'60%'}, 
 	  	'fontName': 'Quicksand',
 	  	'legend': {'position': 'top'},
 	  	'hAxis': {'title': 'Months'},
@@ -65,14 +63,14 @@ export class AnalyticsComponent implements OnInit {
 	    ['Kissan Sauce',    777]
 	  ],
 	  options: {
-	  	'title': 'Product - Sales', 
 	  	'height': 500,
-	  	'chartArea': {'width':'85%', 'height':'70%'}, 
+	  	'chartArea': {'width':'75%', 'height':'60%'}, 
 	  	'fontName': 'Quicksand',
 	  	'legend': {'position': 'none'},
 	  	'hAxis': {'title': 'Products'},
 		'vAxis': {'title': 'Sales'},
-		'animation': {'duration': 800, 'easing': 'in', 'startup': true}
+		'animation': {'duration': 800, 'easing': 'in', 'startup': true},
+		'bar': {'groupWidth': '50%'}
 	  }
 	};
 
