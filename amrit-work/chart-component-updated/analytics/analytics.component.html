@@ -1,0 +1,83 @@
+<div class="row row-charts">
+	<div class="col-md-6">
+		<div class="box-for-chart">
+			<div class="chart-header">
+				<h5>Products Vs Profit</h5>
+			</div>
+			<google-chart [data]="ProductvsProfit"></google-chart>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="box-for-chart">
+			<div class="card text-white bg-dark mb-3">
+			  <div class="card-header">S. A. M. S</div>
+			  <div class="card-body">
+			  	<div class="row">
+			  		<div class="col-md-7">
+			  			<h2 class="card-title"> This month so far ... </h2>
+					    <h5 class="card-text"><strong># Products ordered</strong> - 43, 253</h5>
+					    <h5 class="card-text"><strong># Net Expense</strong> - $ 53, 327.65</h5>
+					    <h5 class="card-text"><strong># Outstanding Payments</strong> - $537.65</h5>
+					    <h5 class="card-text"><strong># Products sold</strong> - 134, 626</h5>
+					    <h5 class="card-text"><strong># Net Profit</strong> - $ 132, 537.65</h5>
+			  		</div>
+			  		<div class="col-md-5">
+			  			<div class="month-div">{{ period }}</div>
+			  		</div>
+			  	</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="carousel-container">
+	<ngu-carousel [inputs]="carousel">
+          <ngu-item NguCarouselItem>
+            <div class="row row-charts">
+				<div class="col-md-12">
+					<div class="box-for-chart">
+						<div class="chart-header">
+							<h5>Profit Vs Month</h5>
+						</div>
+						<google-chart [data]="ProfitvsTime"></google-chart>
+					</div>
+				</div>
+			</div>
+          </ngu-item>
+          <ngu-item NguCarouselItem>
+            <div class="row row-charts">
+				<div class="col-md-12 fix-padding">
+					<div class="box-for-chart">
+						<div class="chart-header">
+							<h5>Sales Vs Products</h5>
+						</div>
+						<google-chart [data]="ProductvsSales"></google-chart>
+					</div>
+				</div>
+			</div>
+          </ngu-item>
+          <button NguCarouselPrev class='leftRs'><strong>&lt;</strong></button>
+          <button NguCarouselNext class='rightRs'><strong>&gt;</strong></button>
+    </ngu-carousel>
+</div>
+
+<!-- <div class="row row-charts">
+	<div class="col-md-12">
+		<div class="box-for-chart">
+			<div class="chart-header">
+				<h5>Profit Vs Month</h5>
+			</div>
+			<google-chart [data]="ProfitvsTime"></google-chart>
+		</div>
+	</div>
+</div>
+<div class="row row-charts">
+	<div class="col-md-12">
+		<div class="box-for-chart">
+			<div class="chart-header">
+				<h5>Sales Vs Products</h5>
+			</div>
+			<google-chart [data]="ProductvsSales"></google-chart>
+		</div>
+	</div>
+</div> -->
