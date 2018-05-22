@@ -34,23 +34,23 @@ module.exports = function(app){
         // });
     // });
 
-    app.put('/productOutlet/shelf/:product_id',function(request , response){
-        outletDB.updateProductOutletShelf( request.params.product_id,request.body.shelf,(err,result) => {
-            if(!err)
-                response.json({ message: "changed state"});
-            else
-                response.json({ error: "failed request"});
-        });
-    });
+    // app.put('/productOutlet/shelf/:product_id',function(request , response){
+    //     outletDB.updateProductOutletShelf( request.params.product_id,request.body.shelf,(err,result) => {
+    //         if(!err)
+    //             response.json({ message: "changed state"});
+    //         else
+    //             response.json({ error: "failed request"});
+    //     });
+    // });
 
-    app.put('/productOutlet/sold/:product_id',function(request , response){
-        outletDB.updateProductOutletSold( request.params.product_id,request.body.sold,(err,result) => {
-            if(!err)
-                response.json({ message: "changed state"});
-            else
-                response.json({ error: "failed request"});
-        });
-    });
+    // app.put('/productOutlet/sold/:product_id',function(request , response){
+    //     outletDB.updateProductOutletSold( request.params.product_id,request.body.sold,(err,result) => {
+    //         if(!err)
+    //             response.json({ message: "changed state"});
+    //         else
+    //             response.json({ error: "failed request"});
+    //     });
+    // });
 
 
 };

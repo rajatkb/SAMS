@@ -1,9 +1,9 @@
 <ul class="nav nav-tabs">
-  <li class="nav-item">
-    <a class="nav-link active" [ngClass] = "{active: hideOrders === false}" (click) = "onTabSelect(2)">ORDER</a>
+  <li class="pointer nav-item">
+    <a class="nav-link active border-dark" [ngClass] = "{'active bg-dark text-white': hideOrders === false}" (click) = "onTabSelect(2)">ORDER</a>
   </li>
-  <li class="nav-item" (click) = "onTabSelect($event)">
-    <a class="nav-link" [ngClass] = "{active: hideSales === false}" (click) = "onTabSelect(1)">SALE</a>
+  <li class="pointer nav-item" (click) = "onTabSelect($event)">
+    <a class="nav-link border-dark" [ngClass] = "{'active bg-dark text-white': hideSales === false}" (click) = "onTabSelect(1); backGroud=!backGroud">SALE</a>
   </li>
 </ul>
 <div class="manage_template">

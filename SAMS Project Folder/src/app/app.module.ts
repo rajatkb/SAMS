@@ -42,6 +42,9 @@ import { PlaceDeliveryComponent } from './components/dashboard/viewpanels/manage
 // services import 
 import { AuthService } from '../app/services/auth.service';
 import { ProductService } from '../app/services/product.service';
+import { BillingService } from '../app/services/billing.service';
+import { GlobalVariableService } from '../app/services/global-variable.service';
+import { OutletService } from '../app/services/outlet.service';
 // guards
 import { AuthGuard } from '../app/guard/auth.guard';
 import { AccessGuard } from '../app/guard/access.guard';
@@ -114,7 +117,10 @@ const appRoutes: Routes = [
     AuthService,
     AuthGuard,
     AccessGuard,
-    ProductService
+    ProductService,
+    BillingService,
+    GlobalVariableService,
+    OutletService
   ],
   bootstrap: [AppComponent]
 })

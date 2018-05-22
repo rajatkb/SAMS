@@ -90,7 +90,6 @@ module.exports=(function(){
         billingState.then((val) => {
             database.query("select * from billing where transactionId=?" , transactionId , (err , results) => {
                 if(!err){
-                   console.log(results);
                     console.log("log: data emitted from BILLING transactionId : "+transactionId);
                     callback(err , (results));
                 }

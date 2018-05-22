@@ -1,0 +1,27 @@
+.bill_layout{
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.6);
+	transition: all 700ms;
+}
+
+.bill_layout:hover{
+	transform:scale(1.1);
+}
+
+.card-columns.no_gutter{
+	column-gap: 0;
+}
+
+.cards{
+	display: inline-block
+}
+
+.container{
+	padding: 70px;
+	width: 100%;
+	transition: all 1s;
+}
+
+.max-height{
+	max-height: 200px;
+	overflow-y: scroll;
+}

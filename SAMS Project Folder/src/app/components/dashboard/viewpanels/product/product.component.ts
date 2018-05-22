@@ -3,6 +3,8 @@ import { Product } from '../../../../model/product.model';
 import { ProductService } from '../../../../services/product.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { NgForm } from '@angular/forms';
+import { OutletService } from '../../../../services/outlet.service';
+import { Outlet } from '../../../../model/outlet.model';
 
 @Component({
   selector: 'app-product',
@@ -26,11 +28,39 @@ export class ProductComponent implements OnInit {
   productMap:Map<string,Product> = undefined;
   keys:string[] = [];
 
+  outletMap:Map<string,Outlet>;
+
   constructor(public productService:ProductService , 
+              public outletService:OutletService,
               public flashMessagesService:FlashMessagesService
               ) { }
 
+  
+
+
   ngOnInit() {
+    
+     this.fillProductsData();
+     this.fillOutletData();
+    ///
+    // listen for dispatched notification on existing entities
+    ///
+  }
+
+  fillOutletData(){
+    this.outletService.getProductsOutlet().subscribe((val:Map<string,Outlet>) => {
+      this.outletMap = val;
+    },error => {
+      if(error){
+        this.flashMessagesService.show("Server issues, products sales data could not be recovered !!!",{cssClass: 'custom-danger-alert' , timeOut:7000});
+        console.log(error);
+      }
+    });
+  }
+
+
+
+  fillProductsData(){
     this.productService.getProducts().subscribe((val:Map<string,Product>) => {
       this.productMap = val;
       this.keys = Object.keys(this.productMap);
@@ -43,11 +73,10 @@ export class ProductComponent implements OnInit {
         console.log(error);
       }
     });
-
-    ///
-    // listen for dispatched notification on existing entities
-    ///
   }
+
+
+
 
   toggleDelete(key:string){
     this.productService.updateProductState(key , !this.productMap[key].status).subscribe((res:any) => {

@@ -31,5 +31,7 @@
 	transform: translate(200%);
 }
 
-
+.pointer{
+	cursor: pointer;
+}
 

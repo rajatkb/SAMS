@@ -4,6 +4,8 @@ import { Product } from '../../../../../model/product.model';
 import { Md5 } from 'ts-md5/dist/md5';
 import { ProductService } from '../../../../../services/product.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
+import { BillingService } from '../../../../../services/billing.service';
+import { Billing } from '../../../../../model/billing.model';
 
 @Component({
   selector: 'app-place-order',
@@ -20,7 +22,8 @@ export class PlaceOrderComponent implements OnInit {
   itemsSelected:{ [id: string] : number} = {};
 
   constructor(public productService:ProductService ,
-              public flashMessagesService:FlashMessagesService
+              public flashMessagesService:FlashMessagesService,
+              public billingService:BillingService
     ) { }
 
   allProducts:Map<string,Product> = undefined;
@@ -58,7 +61,6 @@ export class PlaceOrderComponent implements OnInit {
     if(quantity > 1){
       let index = this.order_id_index;
       let id = this.productsYetToSelect[index];
-      console.log(index , id );
       this.totalBill = this.totalBill + (this.allProducts[id])['price'] * quantity;
       this.productsSelected.push(id);
       this.itemsSelected[id] = quantity;
@@ -85,18 +87,34 @@ export class PlaceOrderComponent implements OnInit {
         this.flashMessagesService.show("Nothing to order!!",{cssClass: 'custom-danger-alert' , timeout:5000});
       }else{
           let time = new Date();
-          let transactionData:Object = {};
-          transactionData['date'] = time.toISOString().substring(0, 10);
-          transactionData['time'] = time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
-          transactionData['category'] = 2;
-          transactionData['deliveryStatus'] = false;
-          transactionData['items'] = this.itemsSelected;
-          transactionData['transactionId'] = Md5.hashStr((transactionData).toString());
-          
-          this.itemsSelected = {};
-          this.productsYetToSelect = Object.keys(this.allProducts);
-          this.productsSelected=[];
-          this.totalBill = 0;  
+          let transactionData:Billing = {
+            date : time.toISOString().substring(0, 10),
+            time : time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds(),
+            category : 2,
+            deliveryStatus : false,
+            items : this.itemsSelected,
+            totalCost : this.totalBill,
+          };
+          transactionData.transactionId = Md5.hashStr(JSON.stringify(transactionData)).toString();
+          this.billingService.createProductsOrderBill(transactionData).subscribe((res:any) =>{
+             if(res.error === undefined){
+              this.flashMessagesService.show("Bill generated !!",{cssClass: 'custom-success-alert' , timeOut:1000});
+              //
+              // Notify the firebase system
+              //
+              // the below part can be handled by the notification system
+              this.itemsSelected = {};
+              this.productsYetToSelect = Object.keys(this.allProducts);
+              this.productsSelected=[];
+              this.totalBill = 0;              
+            }
+          },error => {
+              if(error){
+                this.flashMessagesService.show("Server issues, products could not be added !!!",{cssClass: 'custom-danger-alert' , timeOut:10000});
+                console.log(error);
+              }
+          });
+  
       }
   }
 }

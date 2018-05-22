@@ -1,3 +1,44 @@
-<p>
-  billing works!
-</p>
+<div *ngIf="!billingDataKeys && !allProducts" class="text-center">
+	<img src="https://cdn.dribbble.com/users/450343/screenshots/2465762/loader.gif" alt="">
+</div>
+<div *ngIf="billingDataKeys && allProducts" class="container">
+	<div class="card-columns no_gutter">
+		
+		<div *ngFor = "let key of billingDataKeys; let i = index" class="card bg-light mb-3 bill_layout" style="max-width: 18rem;">
+			  
+			  <div class="card-header" [ngClass]="{'text-white bg-dark': billingData[key].category == 1 }" >
+			  		<h3>{{ billingData[key].category == 1 ? 'Sales' : 'Order' }}</h3>
+			  </div>
+			  <div class="card-body">
+			    <h5 class="card-title">Transaction id: {{ billingData[key].transactionId }}</h5>
+			    <h5>Date : {{ billingData[key].date }}</h5>
+			    <h5>Time : {{ billingData[key].time }}</h5>
+			    <h3>Total :{{ billingData[key].totalCost | currency:'Rs.'}}</h3>
+			    
+			    <button  data-toggle="collapse" [attr.data-target]="'#collapse'+i" 
+			    	class="btn btn-sm" [ngClass]="{'btn-info':billingData[key].category == 2,'btn-success': billingData[key].category == 1}"><i class="far fa-caret-square-down"></i> Show details</button>
+			    
+			    <button *ngIf="billingData[key].category == 2 && !billingData[key].deliveryStatus" class="btn btn-sm btn-danger" (click)="receiveOrder(key)"><i class="far fa-caret-square-down"></i> Receive</button>
+			  </div>
+		  	<ul id="{{'collapse'+i}}" class="list-group max-height list-group-flush w-100 align-items-stretch collapse">
+	            <li class="list-group-item  d-inline-block">
+	            	<div class="row">
+	            		<div class="col-md-3"><b>Item</b></div>
+	            		<div class="col-md-6"><b>Quantity</b></div>
+	            		<div class="col-md-3"><b>Cost</b></div>	
+	            	</div>
+	            </li>
+	            <li *ngFor = "let itemkey of getKeys(billingData[key].transactionId)" class="list-group-item  d-inline-block">
+	            	<div class="row">
+	            		<div class="col-md-4"> {{ allProducts[itemkey].name }} </div>
+	            		<div class="col-md-3"> {{ billingData[key]['items'][itemkey] }}  </div>
+	            		<div class="col-md-5"> {{ allProducts[itemkey].price | currency:'Rs.'}}</div>	
+	            	</div>
+	            </li>
+	        </ul>
+		</div>
+	</div>
+</div>
+	
+
+

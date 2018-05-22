@@ -78,7 +78,7 @@ module.exports=(function(){
 
 		function _updateProductOutletShelf(id,count,callback){
 	        outletState.then((val) => {
-	            database.query("update OUTLET set shelf = ? where product_id = ?" , [count,id] , (err, results)=>{
+	            database.query("update OUTLET set shelf = shelf + ? where product_id = ?" , [count,id] , (err, results)=>{
 	                if(!err){
 	                    console.log("log: OUTLET shelf count changed id : "+id);
 	                    callback(err,results);
@@ -95,7 +95,7 @@ module.exports=(function(){
 
 	    function _updateProductOutletSold(id,count,callback){
 	        outletState.then((val) => {
-	            database.query("update OUTLET set sold = ? where product_id = ?" , [count,id] , (err, results)=>{
+	            database.query("update OUTLET set sold = sold + ?, shelf = shelf - ? where product_id = ?" , [count,count,id] , (err, results)=>{
 	                if(!err){
 	                    console.log("log: OUTLET sold count changed id : "+id);
 	                    callback(err,results);

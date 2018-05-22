@@ -1,25 +1,29 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'; 
 import { Product } from '../model/product.model';
+import { GlobalVariableService } from '../services/global-variable.service';
+
 
 @Injectable()
 export class ProductService {
 
-  constructor(public http:HttpClient){}
+  constructor(public http:HttpClient,
+              public globalVaribales:GlobalVariableService
+    ){}
 
   getProducts(){
-    return this.http.get<Map<string,Product>>('http://127.0.0.1:8008/products');
+    return this.http.get<Map<string,Product>>(this.globalVaribales.API_BASE_URL+'products');
   }
 
   createProduct(data:Product){
-    return this.http.post('http://127.0.0.1:8008/product',data);
+    return this.http.post(this.globalVaribales.API_BASE_URL+'product',data);
   }
 
   getProduct(id:string){
-    return this.http.get<Product>('http://127.0.0.1:8008/product/'+id);
+    return this.http.get<Product>(this.globalVaribales.API_BASE_URL+'product/'+id);
   }  
 
   updateProductState(id:string,state:boolean){
-    return this.http.put('http://127.0.0.1:8008/product/'+id , {status: state});
+    return this.http.put(this.globalVaribales.API_BASE_URL+'product/'+id , {status: state});
   }
 }
