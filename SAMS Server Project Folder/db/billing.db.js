@@ -2,13 +2,15 @@ let database = require('./database');
 module.exports=(function(){
     let createTableSQL =    " create table if not exists BILLING ("+
                             " id int not null unique auto_increment ,"+
-                            " transactionId varchar(30) not null,"+
+                            " transactionId varchar(32) not null,"+
                             " productId varchar(30) not null,"+
                             " count int not null,"+
                             " category int not null,"+
                             " deliveryStatus boolean not null,"+
                             " date date,"+
-                            " primary key(id))"                            
+                            " time time,"+
+                            " totalCost int,"+
+                            " primary key(id))"                           
                             ;
 
 
@@ -29,23 +31,39 @@ module.exports=(function(){
 
         let insertionList=[];
         for(var key=0;key<Object.keys(new_data.items).length;key++){            
-            var new_entry={transactionId: new_data.transactionId,productId: item_keys[key], count: new_data.items[item_keys[key]], category:new_data.category,deliveryStatus:new_data.deliveryStatus, date:new_data.date};
+            var new_entry={transactionId: new_data.transactionId,
+                           productId: item_keys[key], 
+                           count: new_data.items[item_keys[key]], 
+                           category:new_data.category,
+                           deliveryStatus:new_data.deliveryStatus,
+                           date:new_data.date, 
+                           time:new_data.time, 
+                           totalCost: new_data.totalCost
+                        };
             insertionList.push(new_entry);
         };
 
 	    billingState.then((value) => {
-            for(var i=0;i<insertionList.length;i++){
-                database.query("insert into BILLING set ? ",insertionList[i],(err,results)=>{
-                    // error is false when the result is true
-                    if(!err){
-                        console.log("log: data inserted for id : ");
-                        callback(err,results);
-                    }else{
-                        console.log("log: eror while inserting data into BILLING table for id =");
-                        callback(err,results);
-                    }
+            Promise.all(insertionList.map(v => {
+                return new Promise((resolve,reject) => {
+                  database.query("insert into BILLING set ? ",v,(err,results)=>{
+                        // error is false when the result is true
+                        if(!err){
+                            console.log("log:BILLING data inserted for id : ", v.productId , " transactionId : " , v.transactionId);
+                            resolve(true);
+                        }else{
+                            console.log("log: eror while inserting data into BILLING table for id =", v.productId , " transactionId : " , v.transactionId);
+                            reject(false);
+                        }
+                    });      
                 });
-            }
+            })).then(  v => {
+                console.log("log: data added for transaction");
+                callback(false,[]);
+            }).catch( v => {
+                console.log("log: data adding failed for some transaction");
+                callback(true,[]);
+            }); // Promise.all
             
         }).catch((error) => {
             console.log("log: no BILLING table available");
@@ -70,7 +88,7 @@ module.exports=(function(){
     }
     function _getProductBilling(transactionId,callback){
         billingState.then((val) => {
-            database.query("select productId,count from billing where transactionId=?" , transactionId , (err , results) => {
+            database.query("select * from billing where transactionId=?" , transactionId , (err , results) => {
                 if(!err){
                    console.log(results);
                     console.log("log: data emitted from BILLING transactionId : "+transactionId);

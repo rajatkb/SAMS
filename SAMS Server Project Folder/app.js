@@ -21,6 +21,7 @@ app.use(function(req, res, next) {
 let outlet = require('./routes/outlet.route')(app);
 let warehouse = require('./routes/warehouse.route')(app);
 let products = require('./routes/products.route')(app);
+let billing = require('./routes/billing.route')(app);
 
 
 app.listen(port,"localhost",(err) => {
