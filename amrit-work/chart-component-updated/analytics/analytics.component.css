@@ -17,7 +17,7 @@
 .month-div {
 	margin: 5px 20px;
 	padding: 5px 15px;
-	font-size: 35pt;
+	font-size: 45pt;
 	text-align: center;
 	font-weight: 700;
 }
@@ -46,7 +46,7 @@
 
 .card {
 	/*border: none !important;*/
-	min-height: 400px;
+	min-height: 315px;
 }
 
 .carousel-container {
