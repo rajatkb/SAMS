@@ -22,10 +22,10 @@ export class AnalyticsComponent implements OnInit {
 	    ['Kissan Sauce', 777]
 	  ],
 	  options: {
-	  	'height': 355, 
+	  	'height': 270, 
 	  	//'is3D': true,
 	  	'pieHole': 0.4, 
-	  	'chartArea': {'width':'80%', 'height':'75%'}, 
+	  	'chartArea': {'width':'80%', 'height':'65%', 'top': 30}, 
 	  	'fontName': 'Quicksand',
 	  	'legend': {'position': 'bottom'},
 	  	'animation': {'duration': 800, 'easing': 'in', 'startup': true}
@@ -44,7 +44,7 @@ export class AnalyticsComponent implements OnInit {
         ['Jun', 76,   8.8, 53.6,  7.7],
 	  ],
 	  options: {
-	  	'height': 500,
+	  	'height': 350,
 	  	'chartArea': {'width':'80%', 'height':'60%'}, 
 	  	'fontName': 'Quicksand',
 	  	'legend': {'position': 'top'},
@@ -65,7 +65,7 @@ export class AnalyticsComponent implements OnInit {
 	    ['Kissan Sauce',    777]
 	  ],
 	  options: {
-	  	'height': 500,
+	  	'height': 350,
 	  	'chartArea': {'width':'75%', 'height':'60%'}, 
 	  	'fontName': 'Quicksand',
 	  	'legend': {'position': 'none'},
