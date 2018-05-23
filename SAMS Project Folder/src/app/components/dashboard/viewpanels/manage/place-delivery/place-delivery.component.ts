@@ -8,6 +8,7 @@ import { BillingService } from '../../../../../services/billing.service';
 import { Billing } from '../../../../../model/billing.model';
 import { OutletService } from '../../../../../services/outlet.service';
 import { Outlet } from '../../../../../model/outlet.model';
+import { NotificationService } from '../../../../../services/notification.service';
 
 
 @Component({
@@ -29,6 +30,7 @@ export class PlaceDeliveryComponent implements OnInit {
               public flashMessagesService:FlashMessagesService,
               public billingService:BillingService,
               public outletService:OutletService,
+              public nf:NotificationService
     ) { }
 
   allProducts:Map<string,Product> = undefined;
@@ -131,15 +133,15 @@ export class PlaceDeliveryComponent implements OnInit {
           transactionData.transactionId = Md5.hashStr(JSON.stringify(transactionData)).toString();
           this.billingService.createProductsSaleBill(transactionData).subscribe((res:any) =>{
              if(res.error === undefined){
-              this.flashMessagesService.show("Bill generated !!",{cssClass: 'custom-success-alert' , timeOut:1000});
-              //
-              // Notify the firebase system
-              //
-              // the below part can be handled by the notification system
-              this.itemsSelected = {};
-              this.productsYetToSelect = Object.keys(this.allProducts);
-              this.productsSelected=[];
-              this.totalBill = 0;              
+
+               this.nf.pushTransactionNotification("New Order issued " , transactionData , () => {
+                this.flashMessagesService.show("Bill generated !!",{cssClass: 'custom-success-alert' , timeOut:5000});
+                this.itemsSelected = {};
+                this.productsYetToSelect = Object.keys(this.allProducts);
+                this.productsSelected=[];
+                this.totalBill = 0;    
+              });
+                          
             }
           },error => {
               if(error){

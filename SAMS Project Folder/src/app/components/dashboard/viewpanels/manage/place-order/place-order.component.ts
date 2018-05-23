@@ -6,6 +6,7 @@ import { ProductService } from '../../../../../services/product.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { BillingService } from '../../../../../services/billing.service';
 import { Billing } from '../../../../../model/billing.model';
+import { NotificationService } from '../../../../../services/notification.service';
 
 @Component({
   selector: 'app-place-order',
@@ -23,7 +24,8 @@ export class PlaceOrderComponent implements OnInit {
 
   constructor(public productService:ProductService ,
               public flashMessagesService:FlashMessagesService,
-              public billingService:BillingService
+              public billingService:BillingService,
+              public nf:NotificationService
     ) { }
 
   allProducts:Map<string,Product> = undefined;
@@ -98,15 +100,17 @@ export class PlaceOrderComponent implements OnInit {
           transactionData.transactionId = Md5.hashStr(JSON.stringify(transactionData)).toString();
           this.billingService.createProductsOrderBill(transactionData).subscribe((res:any) =>{
              if(res.error === undefined){
-              this.flashMessagesService.show("Bill generated !!",{cssClass: 'custom-success-alert' , timeOut:1000});
+              
               //
-              // Notify the firebase system
+              this.nf.pushTransactionNotification("New Order issued " , transactionData , () => {
+                this.flashMessagesService.show("Bill generated !!",{cssClass: 'custom-success-alert' , timeOut:5000});
+                this.itemsSelected = {};
+                this.productsYetToSelect = Object.keys(this.allProducts);
+                this.productsSelected=[];
+                this.totalBill = 0;    
+              });
               //
-              // the below part can be handled by the notification system
-              this.itemsSelected = {};
-              this.productsYetToSelect = Object.keys(this.allProducts);
-              this.productsSelected=[];
-              this.totalBill = 0;              
+              // the below part can be handled by the notification system           
             }
           },error => {
               if(error){

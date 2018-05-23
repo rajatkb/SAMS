@@ -74,15 +74,19 @@
                             </div>
                 </div>
                 <div class="col-sm-4 total_product_container_ka_container container">
-                    
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-10 total_product_container container">
-                        <div class="row">
-                            <div class="col-sm-8 total_product_no">
-                                20 
-                                <div class="card_name">PRODUCTS</div>
-                            </div>
-                            <div class="col-sm-2 total_product_icon"><i class="fa fa-shopping-cart cart_icon" aria-hidden="true"></i></div>   
+                    <div class="col-sm-12 container px-1">
+                        <div class="card text-white bg-dark mb-3 " style="max-width: rem;">
+                        <div class="card-header container">
+                                <div class="row">
+                                    <div class="total_product_tag col-sm-10"><h3>TOTAL</h3></div>
+                                    <div class="cart_pic col-sm-2"><i class="fa fa-shopping-cart"></i></div>
+                                </div>
+                        </div>
+                        <div class="card-body">
+                          <h5>Total units: {{ totalUnits }} units</h5>  
+                          <h5>Items on Shelf: {{ totalShelf }} units</h5> 
+                          <h5>Items Sold: {{ totalSold }} units</h5>
+                        </div>
                         </div>
                     
                     </div>
@@ -112,7 +116,7 @@
                 <th></th>
             </tr>
             <ng-container *ngFor="let key of keys;">
-                <tr *ngIf="productMap[key].status || productMap[key].status == 1">
+                <tr *ngIf="productMap[key].status == 1">
                     <td><img src="{{ productMap[key].picture_url }}" alt="" /></td>
                     <td><a [routerLink]="[key]" >{{ productMap[key].id }}</a></td>
                     <td>{{ productMap[key].name }}</td>
@@ -122,7 +126,7 @@
                     <td>{{ productMap[key].description }} </td>
                     <td>{{ outletMap[key].shelf }}</td>
                     <td>{{ outletMap[key].sold }}</td>
-                    <td><i class="fa fa-trash delete_icon" (click)="toggleDelete(key);"aria-hidden="true"></i></td>
+                    <td><i class="fa fa-trash delete_icon" (click)="toggleDelete(key , 0);"aria-hidden="true"></i></td>
                 </tr>
             </ng-container>
                       
@@ -146,7 +150,7 @@
             </tr>
     
             <ng-container *ngFor="let key of keys;">
-                <tr *ngIf="!productMap[key].status || productMap[key].status == 0">
+                <tr *ngIf="productMap[key].status == 0">
                     <td><img src="{{ productMap[key].picture_url }}" alt="" /></td>
                     <td>{{ productMap[key].id }}</td>
                     <td>{{ productMap[key].name }}</td>
@@ -156,7 +160,7 @@
                     <td>{{ productMap[key].description }} </td>
                     <td>{{ outletMap[key].shelf }}</td>
                     <td>{{ outletMap[key].sold }}</td>
-                    <td><i class="fa fa-check insert_icon" (click)="toggleDelete(key);"aria-hidden="true"></i></td>
+                    <td><i class="fa fa-check insert_icon" (click)="toggleDelete(key , 1);"aria-hidden="true"></i></td>
                 </tr>
             </ng-container>
             

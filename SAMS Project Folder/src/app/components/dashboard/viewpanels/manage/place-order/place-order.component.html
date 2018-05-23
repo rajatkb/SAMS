@@ -21,7 +21,7 @@
         <td><img src="{{ allProducts[id]['picture_url'] }}" alt="" /></td>
         <td class="add-font">{{ allProducts[id]['id'] }}</td>
         <td class="add-font">{{ allProducts[id]['name'] }}</td>
-        <td class="add-font">{{ allProducts[id]['price'] }}</td>
+        <td class="add-font">{{ allProducts[id]['price'] | currency:'Rs.'}}</td>
         <td class="add-font">{{ itemsSelected[id] }}</td>
         <td class="add-font"><i class="fa fa-trash delete_icon" aria-hidden="true" (click) = "deleteFromOrders(i)"></i></td>
       </tr>
@@ -31,7 +31,7 @@
   <div class="form-group row">
       <div class="col-md-5">
         <select name="order_id_index" [(ngModel)]="order_id_index" class="form-control" placeholder="Product ID" >
-            <option *ngFor = "let product of productsYetToSelect; let i = index" value="{{ i }}">{{ product }}</option>
+            <option *ngFor = "let productid of productsYetToSelect; let i = index" value="{{ i }}">{{ allProducts[productid].name }}</option>
         </select>
       </div>
       <div class="col-md-5">

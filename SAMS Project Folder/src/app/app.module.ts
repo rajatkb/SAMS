@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
+import { NguCarouselModule } from '@ngu/carousel';
 
 // Angular firebase imports
 import { AngularFireModule}  from 'angularfire2';
@@ -45,6 +47,7 @@ import { ProductService } from '../app/services/product.service';
 import { BillingService } from '../app/services/billing.service';
 import { GlobalVariableService } from '../app/services/global-variable.service';
 import { OutletService } from '../app/services/outlet.service';
+import { NotificationService } from '../app/services/notification.service';
 // guards
 import { AuthGuard } from '../app/guard/auth.guard';
 import { AccessGuard } from '../app/guard/access.guard';
@@ -109,7 +112,9 @@ const appRoutes: Routes = [
     AngularFireModule.initializeApp(firebaseConfig),
     FlashMessagesModule.forRoot(),
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    Ng2GoogleChartsModule,
+    NguCarouselModule
   ],
   providers: [
     AngularFireAuth,
@@ -120,7 +125,8 @@ const appRoutes: Routes = [
     ProductService,
     BillingService,
     GlobalVariableService,
-    OutletService
+    OutletService,
+    NotificationService
   ],
   bootstrap: [AppComponent]
 })
