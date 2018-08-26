@@ -1,5 +1,7 @@
 # SAMS
 SAMS: Stock analysis and management system  
+
+Demo video : <a href="https://www.youtube.com/watch?v=emlMBHXNNmY&t=5s"> Demo Video</a>
   
 
 ## Features:  
